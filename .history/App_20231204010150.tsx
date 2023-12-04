@@ -5,12 +5,9 @@ import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <View style={styles.container}>
-        <Text>teste</Text>
-        <StatusBar style="auto" />
-      </View>
-    </NavigationContainer>
+        <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+
+    
   );
 }
 
@@ -23,8 +20,8 @@ const styles = StyleSheet.create({
   },
 });
 
-// export default function App() {
-//   return (
-//     <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
-//   );
-// }
+export default function App() {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+}

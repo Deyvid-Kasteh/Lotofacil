@@ -7,7 +7,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <Text>teste</Text>
+        <Text>Open up App.tsx to start working on your app!</Text>
         <StatusBar style="auto" />
       </View>
     </NavigationContainer>
