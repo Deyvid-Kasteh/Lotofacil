@@ -1,0 +1,22 @@
+{
+  "colorize.languages": [
+    "typescriptreact",
+    "javascriptreact",
+    "javascript",
+    "typescript",
+    "js",
+    "jsx",
+    "json",
+    "ts",
+    "tsx",
+    "css",
+    "sass",
+    "scss",
+    "less",
+    "postcss",
+    "sss",
+    "stylus",
+    "xml",
+    "svg"
+  ]
+}

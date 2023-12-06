@@ -15,7 +15,9 @@ const ResultadosScreen: FC<ResultadosScreenProps> = () => {
     1, 2, 4, 5, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 25,
   ];
 
-  
+  const backgroundColor1: string = "#687B8C";
+  const backgroundColor2: string = "#394A59";
+  const backgroundColor3: string = "#E9ECF2";
 
   const [alturaView1, setAlturaView1] = useState<number>(200);
 
