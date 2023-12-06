@@ -1,59 +1,34 @@
 import React from "react";
-import {
-  createBottomTabNavigator,
-  BottomTabNavigationOptions,
-} from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
-import { RouteProp } from "@react-navigation/native";
+
 import ResultadosScreen from "../screens/ResultadosScreen";
 import CriarJogoScreen from "../screens/CriarJogoScreen";
 import MeusJogosScreen from "../screens/MeusJogosScreen";
 import ConferirScreen from "../screens/ConferirScreen";
 
-type RootTabParamList = {
-  Resultados: undefined;
-  "Criar Jogo": undefined;
-  "Meus Jogos": undefined;
-  Conferir: undefined;
-};
+const Tab = createBottomTabNavigator();
 
-type TabBarIconProps = {
-  focused: boolean;
-  color: string;
-  size: number;
-};
-
-const Tab = createBottomTabNavigator<RootTabParamList>();
-
-const getIconName = (routeName: string, focused: boolean): string => {
-  switch (routeName) {
-    case "Resultados":
-      return focused ? "ios-trophy" : "ios-trophy-outline";
-    case "Criar Jogo":
-      return focused ? "ios-create" : "ios-create-outline";
-    case "Meus Jogos":
-      return focused ? "ios-list" : "ios-list-outline";
-    case "Conferir":
-      return focused ? "ios-checkmark-circle" : "ios-checkmark-circle-outline";
-    default:
-      return "";
-  }
-};
-
-const BottomTabNavigator: React.FC = () => {
+const BottomTabNavigator = () => {
   return (
     <Tab.Navigator
-      screenOptions={({ route }): BottomTabNavigationOptions => ({
-        tabBarIcon: ({ focused, color, size }: TabBarIconProps) => {
-          const iconName = getIconName(route.name, focused);
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
 
-          return (
-            <Ionicons
-              name={iconName as keyof typeof Ionicons.glyphMap}
-              size={size}
-              color={color}
-            />
-          );
+          if (route.name === "Resultados") {
+            iconName = focused ? "ios-trophy" : "ios-trophy-outline";
+          } else if (route.name === "Criar Jogo") {
+            iconName = focused ? "ios-create" : "ios-create-outline";
+          } else if (route.name === "Meus Jogos") {
+            iconName = focused ? "ios-list" : "ios-list-outline";
+          } else if (route.name === "Conferir") {
+            iconName = focused
+              ? "ios-checkmark-circle"
+              : "ios-checkmark-circle-outline";
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarLabelPosition: "beside-icon",
         tabBarActiveTintColor: "blue",
@@ -88,32 +63,6 @@ const BottomTabNavigator: React.FC = () => {
 };
 
 export default BottomTabNavigator;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // import React from "react";
@@ -152,9 +101,11 @@ export default BottomTabNavigator;
 //   return (
 //     <Tab.Navigator
 //       screenOptions={({ route }): BottomTabNavigationOptions => ({
+//         // Configuração dos ícones na barra de navegação
 //         tabBarIcon: ({ focused, color, size }: TabBarIconProps) => {
-//           let iconName: string | undefined;
+//           let iconName;
 
+//           // Define o ícone com base no nome da rota
 //           if (route.name === "Resultados") {
 //             iconName = focused ? "ios-trophy" : "ios-trophy-outline";
 //           } else if (route.name === "Criar Jogo") {
@@ -167,13 +118,8 @@ export default BottomTabNavigator;
 //               : "ios-checkmark-circle-outline";
 //           }
 
-//           // Garantir que iconName não é undefined antes de usá-lo
-//           if (iconName) {
-//             return <Ionicons name={iconName} size={size} color={color} />;
-//           }
-
-//           // Caso iconName seja undefined, pode retornar null ou outro componente desejado
-//           return null;
+//           // Renderiza o ícone correspondente
+//           return <Ionicons name={iconName} size={size} color={color} />;
 //         },
 //         tabBarLabelPosition: "beside-icon",
 //         tabBarActiveTintColor: "blue",
@@ -207,5 +153,5 @@ export default BottomTabNavigator;
 //     </Tab.Navigator>
 //   );
 // };
-// export default BottomTabNavigator;
 
+// export default BottomTabNavigator;

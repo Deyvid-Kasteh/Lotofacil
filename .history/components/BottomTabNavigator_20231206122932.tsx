@@ -110,12 +110,6 @@ export default BottomTabNavigator;
 
 
 
-
-
-
-
-
-
 // import React from "react";
 // import {
 //   createBottomTabNavigator,

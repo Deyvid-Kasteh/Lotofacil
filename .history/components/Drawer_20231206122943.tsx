@@ -1,3 +1,5 @@
+
+
 import "react-native-gesture-handler";
 import { View, Text } from "react-native";
 import {
@@ -62,57 +64,6 @@ export default DrawerLotofacil;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import "react-native-gesture-handler";
 
 // import { View, Text } from "react-native";
@@ -160,3 +111,4 @@ export default DrawerLotofacil;
 // }
 
 // export default DrawerLotofacil;
+

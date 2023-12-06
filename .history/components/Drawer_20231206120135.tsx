@@ -1,12 +1,9 @@
 import "react-native-gesture-handler";
+
 import { View, Text } from "react-native";
-import {
-  createDrawerNavigator,
-  DrawerNavigationOptions,
-} from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import BottomTabNavigator from "./BottomTabNavigator";
 
-// Componente para a tela de Feed
 function Feed() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -14,8 +11,6 @@ function Feed() {
     </View>
   );
 }
-
-// Componente para a tela de Article
 function Article() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -24,24 +19,17 @@ function Article() {
   );
 }
 
-// Definição do tipo para as rotas do Drawer
-type RootDrawerParamList = {
-  Home: undefined;
-  Article: undefined;
-};
+const Drawer = createDrawerNavigator();
 
-const Drawer = createDrawerNavigator<RootDrawerParamList>();
-
-// Componente DrawerLotofacil
 function DrawerLotofacil() {
   return (
     <Drawer.Navigator
-      screenOptions={(): DrawerNavigationOptions => ({
-        // Configurações de estilo para as telas do Drawer
-        // headerShown: false,
-      })}
+      screenOptions={
+        {
+          // headerShown: false,
+        }
+      }
     >
-      {/* Tela principal com o BottomTabNavigator */}
       <Drawer.Screen
         name="Home"
         component={BottomTabNavigator}
@@ -50,7 +38,7 @@ function DrawerLotofacil() {
           headerTitleAlign: "center",
         }}
       />
-      {/* Tela de Article */}
+      <Drawer.Screen name="Article" component={Article} />
       <Drawer.Screen name="Article" component={Article} />
     </Drawer.Navigator>
   );
@@ -58,67 +46,15 @@ function DrawerLotofacil() {
 
 export default DrawerLotofacil;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import "react-native-gesture-handler";
-
 // import { View, Text } from "react-native";
-// import { createDrawerNavigator } from "@react-navigation/drawer";
+// import {
+//   createDrawerNavigator,
+//   DrawerNavigationOptions,
+// } from "@react-navigation/drawer";
 // import BottomTabNavigator from "./BottomTabNavigator";
 
+// // Componente para a tela de Feed
 // function Feed() {
 //   return (
 //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -126,6 +62,8 @@ export default DrawerLotofacil;
 //     </View>
 //   );
 // }
+
+// // Componente para a tela de Article
 // function Article() {
 //   return (
 //     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -134,17 +72,24 @@ export default DrawerLotofacil;
 //   );
 // }
 
-// const Drawer = createDrawerNavigator();
+// // Definição do tipo para as rotas do Drawer
+// type RootDrawerParamList = {
+//   Home: undefined;
+//   Article: undefined;
+// };
 
+// const Drawer = createDrawerNavigator<RootDrawerParamList>();
+
+// // Componente DrawerLotofacil
 // function DrawerLotofacil() {
 //   return (
 //     <Drawer.Navigator
-//       screenOptions={
-//         {
-//           // headerShown: false,
-//         }
-//       }
+//       screenOptions={(): DrawerNavigationOptions => ({
+//         // Configurações de estilo para as telas do Drawer
+//         // headerShown: false,
+//       })}
 //     >
+//       {/* Tela principal com o BottomTabNavigator */}
 //       <Drawer.Screen
 //         name="Home"
 //         component={BottomTabNavigator}
@@ -153,10 +98,11 @@ export default DrawerLotofacil;
 //           headerTitleAlign: "center",
 //         }}
 //       />
+//       {/* Tela de Article */}
 //       <Drawer.Screen name="Article" component={Article} />
-//       <Drawer.Screen name="Feed" component={Feed} />
 //     </Drawer.Navigator>
 //   );
 // }
 
 // export default DrawerLotofacil;
+

@@ -58,61 +58,6 @@ function DrawerLotofacil() {
 
 export default DrawerLotofacil;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import "react-native-gesture-handler";
 
 // import { View, Text } from "react-native";

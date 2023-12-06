@@ -98,24 +98,6 @@ const ResultadosScreen: FC<ResultadosScreenProps> = () => {
 
 export default ResultadosScreen;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // import { View, Text, TouchableOpacity } from "react-native";
 // import React, { useState } from "react";
 // import Bolhas from "../components/Bolhas";
