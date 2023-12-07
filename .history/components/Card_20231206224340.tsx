@@ -1,0 +1,100 @@
+import React, { useState, FC } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import * as Cores from "../assets/Cores";
+import Bolhas from "./Bolhas";
+
+
+
+
+
+
+
+
+
+
+
+
+const Card = () => {
+
+      const ultimoSorteio3: number[] = [
+        1, 2, 4, 5, 10, 11, 12, 14, 15, 16, 17, 18, 20, 21, 25,
+      ];
+
+
+
+
+
+    const, setAlturaVi] = useState<number>(200);
+
+    const toggleAltura = (): void => {
+      const novaAltura: number = alturaVi === 200 ? 50 : 200;
+      setAlturaVi(novaAltura);
+    };
+  return (
+    <View
+      style={[
+        {
+          padding: 10,
+          borderRadius: 50,
+          alignItems: "center",
+          elevation: 2,
+          backgroundColor: Cores.cor4,
+          marginBottom: 10,
+        },
+        alturaVi === 50
+          ? { width: 250, backgroundColor: Cores.cor1 }
+          : { width: 350, backgroundColor: Cores.cor4 },
+      ]}
+    >
+      <TouchableOpacity
+        style={[
+          {
+            width: 240,
+            backgroundColor: Cores.cor1,
+            elevation: 5,
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 10,
+            borderRadius: 20,
+            marginBottom: 5,
+          },
+          alturaVi === 50
+            ? { width: 190, backgroundColor: Cores.cor2 }
+            : { width: 240, backgroundColor: Cores.cor1 },
+        ]}
+        onPress={() => toggleAltura()}
+      >
+        <Text
+          style={{
+            fontSize: 20,
+            color: alturaVi === 50 ? Cores.cor4 : Cores.cor5,
+          }}
+        >
+          Último Sorteio
+        </Text>
+      </TouchableOpacity>
+
+      {alturaVi === 200 && (
+        <View
+          style={{
+            flexWrap: "wrap",
+            flexDirection: "row",
+            alignContent: "center",
+            justifyContent: "space-evenly",
+          }}
+        >
+          {ultimoSorteio3.map((numero, index) => (
+            <Bolhas
+              key={index}
+              numero={numero}
+              choose={false}
+              onPress={() => {}}
+            />
+          ))}
+        </View>
+      )}
+    </View>
+  );
+};
+
+export default Card;
