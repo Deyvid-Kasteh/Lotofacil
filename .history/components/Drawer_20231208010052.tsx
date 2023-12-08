@@ -33,7 +33,7 @@ type RootDrawerParamList = {
 const Drawer = createDrawerNavigator<RootDrawerParamList>();
 
 // Componente DrawerLotofacil
-function DrawerLotofacil() {
+function DrawerLotofacil15474() {
   return (
     <Drawer.Navigator
       screenOptions={(): DrawerNavigationOptions => ({
@@ -56,7 +56,7 @@ function DrawerLotofacil() {
   );
 }
 
-export default DrawerLotofacil;
+export default DrawerLotofacil15474;
 
 
 
