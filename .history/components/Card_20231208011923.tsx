@@ -58,7 +58,7 @@ const Card: FC<CardProps> = ({
             paddingRight: 10,
             borderRadius: 50,
             alignItems: "center",
-            elevation: 5,
+            elevation: 2,
             backgroundColor: Cores.cor4,
             marginBottom: 28,
           }}

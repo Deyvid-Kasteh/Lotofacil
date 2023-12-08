@@ -58,7 +58,7 @@ const Card: FC<CardProps> = ({
             paddingRight: 10,
             borderRadius: 50,
             alignItems: "center",
-            elevation: 5,
+            elevation: 2,
             backgroundColor: Cores.cor4,
             marginBottom: 28,
           }}
@@ -85,28 +85,34 @@ const Card: FC<CardProps> = ({
             </Text>
             <Text style={{ color: Cores.cor5 }}>Data: {data}</Text>
           </View>
-          <View
-            style={{
-              flexWrap: "wrap",
-              flexDirection: "row",
-              alignContent: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            {numeros.map((numero, index) => (
-              <Bolhas
-                key={index}
-                numero={numero}
-                choose={false}
-                onPress={() => {}}
-              />
-            ))}
-          </View>
+
+          {alturaCard1 === 200 && (
+            <>
+              <View
+                style={{
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  alignContent: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                {numeros.map((numero, index) => (
+                  <Bolhas
+                    key={index}
+                    numero={numero}
+                    choose={false}
+                    onPress={() => {}}
+                  />
+                ))}
+              </View>
+              <View></View>
+            </>
+          )}
         </View>
         <View
           style={{
             alignItems: "center",
-            marginBottom: 28,
+            marginBottom: 20,
           }}
         >
           <View

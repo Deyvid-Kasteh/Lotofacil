@@ -37,6 +37,13 @@ const Card: FC<CardProps> = ({
   premio12,
   premio11,
 }) => {
+  const [alturaCard1, setAlturaCard1] = useState<number>(200);
+
+  const toggleAltura = (): void => {
+    const novaAltura: number = alturaCard1 === 200 ? 50 : 200;
+    setAlturaCard1(novaAltura);
+  };
+
   return (
     <View>
       <View
@@ -58,55 +65,67 @@ const Card: FC<CardProps> = ({
             paddingRight: 10,
             borderRadius: 50,
             alignItems: "center",
-            elevation: 5,
+            elevation: 2,
             backgroundColor: Cores.cor4,
             marginBottom: 28,
           }}
         >
-          <View
-            style={{
-              width: 240,
-              backgroundColor: Cores.cor1,
-              elevation: 5,
-              justifyContent: "center",
-              alignItems: "center",
-              padding: 10,
-              borderRadius: 20,
-              marginBottom: 10,
-            }}
+          <TouchableOpacity
+            style={[
+              {
+                width: 240,
+                backgroundColor: Cores.cor1,
+                elevation: 5,
+                justifyContent: "center",
+                alignItems: "center",
+                padding: 10,
+                borderRadius: 20,
+                marginBottom: 10,
+              },
+              alturaCard1 === 50
+                ? { width: 190, backgroundColor: Cores.cor2 }
+                : { width: 240, backgroundColor: Cores.cor1 },
+            ]}
+            onPress={() => toggleAltura()}
           >
             <Text
               style={{
                 fontSize: 20,
-                color: Cores.cor5,
+                color: alturaCard1 === 50 ? Cores.cor4 : Cores.cor5,
               }}
             >
               Último Sorteio: {sorteio}
             </Text>
             <Text style={{ color: Cores.cor5 }}>Data: {data}</Text>
-          </View>
-          <View
-            style={{
-              flexWrap: "wrap",
-              flexDirection: "row",
-              alignContent: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            {numeros.map((numero, index) => (
-              <Bolhas
-                key={index}
-                numero={numero}
-                choose={false}
-                onPress={() => {}}
-              />
-            ))}
-          </View>
+          </TouchableOpacity>
+
+          {alturaCard1 === 200 && (
+            <>
+              <View
+                style={{
+                  flexWrap: "wrap",
+                  flexDirection: "row",
+                  alignContent: "center",
+                  justifyContent: "space-evenly",
+                }}
+              >
+                {numeros.map((numero, index) => (
+                  <Bolhas
+                    key={index}
+                    numero={numero}
+                    choose={false}
+                    onPress={() => {}}
+                  />
+                ))}
+              </View>
+              <View></View>
+            </>
+          )}
         </View>
         <View
           style={{
             alignItems: "center",
-            marginBottom: 28,
+            marginBottom: 20,
           }}
         >
           <View
@@ -401,3 +420,4 @@ const Card: FC<CardProps> = ({
 };
 
 export default Card;
+

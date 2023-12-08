@@ -55,7 +55,7 @@ const BottomTabNavigator: React.FC = () => {
             />
           );
         },
-        tabBarLabelPosition: "below-icon",
+        tabBarLabelPosition: "",
         tabBarActiveTintColor: "blue",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {

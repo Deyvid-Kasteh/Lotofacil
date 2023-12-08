@@ -116,6 +116,7 @@ const Card: FC<CardProps> = ({
               borderTopLeftRadius: 50,
               borderTopRightRadius: 50,
               alignItems: "center",
+              elevation: 50,
             }}
           >
             <Text style={{ fontSize: 24, color: Cores.cor1 }}>Prêmio</Text>
