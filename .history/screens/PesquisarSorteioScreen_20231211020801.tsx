@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import React from 'react'
+import { View, Text, TouchableOpacity} from 'react-native'
 import * as Cores from "../assets/Cores";
-import NumericInput from "../components/NumericInput";
 
-const PesquisarSorteioScreen: React.FC = () => {
-  const [numero, setNumero] = useState<number | string>("");
 
-  const handleNumeroChange = (text: string) => {
-    // Converte o valor para número e atualiza o estado
-    setNumero(text === "" ? "" : parseFloat(text));
-  };
-
+const PesquisarSorteioScreen = () => {
   return (
     <View
       style={{
@@ -20,17 +13,9 @@ const PesquisarSorteioScreen: React.FC = () => {
         backgroundColor: Cores.cor3,
       }}
     >
-      <Text
-        style={{
-          fontSize: 24,
-          fontWeight: "bold",
-          color: Cores.cor5,
-          marginTop: 10,
-          marginBottom: 10,
-        }}
-      >
-        Pesquise um concurso específico
-      </Text>
+      <Text>Pesquise um concurso específico:</Text>
+      <Text>Digite o número do concurso:</Text>
+      <Text>Buscar</Text>
       <View
         style={{
           width: 380,
@@ -45,31 +30,23 @@ const PesquisarSorteioScreen: React.FC = () => {
       >
         <View
           style={{
-            // width: 140,
+                width: 140,
             borderRadius: 5,
             backgroundColor: Cores.cor1,
             marginLeft: 5,
             justifyContent: "center",
             alignItems: "center",
-            paddingRight: 8,
-            paddingLeft: 8,
           }}
         >
           <Text
             style={{
-              fontSize: 14,
+              fontSize: 11,
               color: Cores.cor5,
             }}
           >
             Digite o número do concurso:
           </Text>
         </View>
-
-        <NumericInput
-          value={numero}
-          onChangeText={handleNumeroChange}
-          placeholder="Ex.: 2890"
-        />
         <TouchableOpacity
           style={{
             borderRadius: 5,
@@ -79,7 +56,7 @@ const PesquisarSorteioScreen: React.FC = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          //   onPress={() => BuscarPeriodo(value)}
+        //   onPress={() => BuscarPeriodo(value)}
         >
           <Text
             style={{
@@ -93,6 +70,6 @@ const PesquisarSorteioScreen: React.FC = () => {
       </View>
     </View>
   );
-};
+}
 
-export default PesquisarSorteioScreen;
+export default PesquisarSorteioScreen

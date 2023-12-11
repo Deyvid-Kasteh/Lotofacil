@@ -4,12 +4,17 @@ import * as Cores from "../assets/Cores";
 import NumericInput from "../components/NumericInput";
 
 const PesquisarSorteioScreen: React.FC = () => {
-  const [numero, setNumero] = useState<number | string>("");
 
-  const handleNumeroChange = (text: string) => {
-    // Converte o valor para número e atualiza o estado
-    setNumero(text === "" ? "" : parseFloat(text));
-  };
+
+    const [numero, setNumero] = useState<number | string>("");
+
+    const handleNumeroChange = (text: string) => {
+      // Converte o valor para número e atualiza o estado
+      setNumero(text === "" ? "" : parseFloat(text));
+    };
+
+
+
 
   return (
     <View
@@ -26,7 +31,6 @@ const PesquisarSorteioScreen: React.FC = () => {
           fontWeight: "bold",
           color: Cores.cor5,
           marginTop: 10,
-          marginBottom: 10,
         }}
       >
         Pesquise um concurso específico
