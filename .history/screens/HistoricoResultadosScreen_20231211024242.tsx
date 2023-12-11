@@ -3,7 +3,9 @@ import { View, Text, TouchableOpacity } from "react-native";
 import * as Cores from "../assets/Cores";
 import Lotofacil from "../assets/lotofacilTeste.json";
 import LotoComplete from "../assets/lotofacilCompleta.json";
+import CardHistoricoResultadosScreen from "../components/CardHistoricoResultadosScreen";
 import FlatListHistoricoResultadosScreen from "../components/FlatListHistoricoResultadosScreen";
+import MenuTeste from "../components/TestComponents";
 import DropdownPeriodo from "../components/DropdownPeriodo";
 
 const HistoricoResultadosScreen = () => {

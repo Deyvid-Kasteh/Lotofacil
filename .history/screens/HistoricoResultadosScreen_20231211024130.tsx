@@ -3,7 +3,9 @@ import { View, Text, TouchableOpacity } from "react-native";
 import * as Cores from "../assets/Cores";
 import Lotofacil from "../assets/lotofacilTeste.json";
 import LotoComplete from "../assets/lotofacilCompleta.json";
-import FlatListHistoricoResultadosScreen from "../components/FlatListHistoricoResultadosScreen";
+import CardHistoricoResultadosScreen from "../components/CardHistoricoResultadosScreen";
+
+import MenuTeste from "../components/TestComponents";
 import DropdownPeriodo from "../components/DropdownPeriodo";
 
 const HistoricoResultadosScreen = () => {
@@ -214,9 +216,7 @@ const [resultado, setResultado] = useState<MeuObjeto[] | null>(null);
               maxHeight: 500, // Defina a altura máxima desejada
             }}
           >
-            {resultado && (
-              <FlatListHistoricoResultadosScreen periodo={resultado} />
-            )}
+            {resultado && <MenuTeste periodo={resultado} />}
           </View>
         </View>
       </View>

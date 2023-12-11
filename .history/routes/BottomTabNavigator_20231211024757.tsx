@@ -12,7 +12,9 @@ import CriarJogoScreen from "../screens/CriarJogoScreen";
 import MeusJogosScreen from "../screens/MeusJogosScreen";
 import ConferirScreen from "../screens/ConferirScreen";
 
+import MenuTeste from "../components/TestComponents";
 import EncontrarConcurso from "../components/TestComponents";
+EncontrarConcurso
 
 
 
@@ -96,7 +98,7 @@ const BottomTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Criar Jogo"
-        component={EncontrarConcurso}
+        component={MenuTeste}
         options={{ headerShown: true, headerTitleAlign: "center" }}
       />
       <Tab.Screen

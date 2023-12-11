@@ -12,7 +12,7 @@ const PesquisarSorteioScreen: React.FC = () => {
   };
 
 
-    console.log(numero)
+    console.log()
   return (
     <View
       style={{

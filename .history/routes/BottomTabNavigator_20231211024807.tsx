@@ -12,6 +12,7 @@ import CriarJogoScreen from "../screens/CriarJogoScreen";
 import MeusJogosScreen from "../screens/MeusJogosScreen";
 import ConferirScreen from "../screens/ConferirScreen";
 
+import MenuTeste from "../components/TestComponents";
 import EncontrarConcurso from "../components/TestComponents";
 
 
