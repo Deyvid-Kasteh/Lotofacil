@@ -1,20 +1,22 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import * as Cores from "../assets/Cores";
-import LotofacilCompleta from "../assets/lotofacilCompleta.json";
-import CardHistoricoResultadosScreen from "../components/CardHistoricoResultadosScreen";
-
-const dadosConcursos = LotofacilCompleta;
+import NumericInput from "../components/NumericInput";
 
 const PesquisarSorteioScreen: React.FC = () => {
-  interface Concurso {
-    concurso: number;
-    // ... (outras propriedades)
-  }
 
+
+
+
+
+
+  interface Concurso {
+  concurso: number;
+  // ... (outras propriedades)
+}
+
+const EncontrarConcurso: React.FC = () => {
   const [numeroConcurso, setNumeroConcurso] = useState<number | null>(null);
-  const [concursoEncontradoState, setConcursoEncontradoState] = useState(null);
-  console.log(concursoEncontradoState);
 
   const buscarConcurso = () => {
     if (numeroConcurso !== null) {
@@ -23,7 +25,6 @@ const PesquisarSorteioScreen: React.FC = () => {
       );
 
       if (concursoEncontrado) {
-        setConcursoEncontradoState(concursoEncontrado);
         console.log("Concurso encontrado:", concursoEncontrado);
       } else {
         console.log("Concurso não encontrado");
@@ -31,6 +32,40 @@ const PesquisarSorteioScreen: React.FC = () => {
     }
   };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const [numero, setNumero] = useState<number | string>("");
+
+  const handleNumeroChange = (text: string) => {
+    // Converte o valor para número e atualiza o estado
+    setNumero(text === "" ? "" : parseFloat(text));
+  };
+
+
+    console.log(numero)
   return (
     <View
       style={{
@@ -84,24 +119,11 @@ const PesquisarSorteioScreen: React.FC = () => {
             Digite o número do concurso:
           </Text>
         </View>
-        <TextInput
-          style={{
-            borderColor: "gray",
-            borderWidth: 1,
-            paddingHorizontal: 10,
-            borderRadius: 5,
-            backgroundColor: Cores.cor1,
-            // width: 200,
-            marginLeft: 5,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+
+        <NumericInput
+          value={numero}
+          onChangeText={handleNumeroChange}
           placeholder="Ex.: 2890"
-          keyboardType="numeric"
-          value={numeroConcurso !== null ? numeroConcurso.toString() : ""}
-          onChangeText={(text) =>
-            setNumeroConcurso(text ? parseInt(text, 10) : null)
-          }
         />
         <TouchableOpacity
           style={{
@@ -112,12 +134,11 @@ const PesquisarSorteioScreen: React.FC = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          onPress={buscarConcurso}
+          //   onPress={() => BuscarPeriodo(value)}
         >
           <Text
             style={{
               fontSize: 11,
-              fontWeight: "bold",
               color: Cores.cor5,
             }}
           >
@@ -125,14 +146,6 @@ const PesquisarSorteioScreen: React.FC = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      {concursoEncontradoState !== null ? (
-        <CardHistoricoResultadosScreen
-          concurso={concursoEncontradoState.concurso}
-          dezenas={concursoEncontradoState.Dezenas}
-          premio={concursoEncontradoState["Premio 15 Acertos"]}
-        />
-      ) : null}
-      <View></View>
     </View>
   );
 };

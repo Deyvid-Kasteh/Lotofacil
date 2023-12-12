@@ -184,6 +184,7 @@ const Card: FC<CardProps> = ({
           ></View>
         </View>
 
+        {/* sfdaggggggggggggggggggggggggggggggggggggggggg */}
         <View
           style={{
             width: 270,

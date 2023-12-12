@@ -2,19 +2,27 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import * as Cores from "../assets/Cores";
 import LotofacilCompleta from "../assets/lotofacilCompleta.json";
-import CardHistoricoResultadosScreen from "../components/CardHistoricoResultadosScreen";
+
 
 const dadosConcursos = LotofacilCompleta;
 
+
+
+
 const PesquisarSorteioScreen: React.FC = () => {
+
+
+
+
+
+
   interface Concurso {
-    concurso: number;
-    // ... (outras propriedades)
-  }
+  concurso: number;
+  // ... (outras propriedades)
+}
 
   const [numeroConcurso, setNumeroConcurso] = useState<number | null>(null);
   const [concursoEncontradoState, setConcursoEncontradoState] = useState(null);
-  console.log(concursoEncontradoState);
 
   const buscarConcurso = () => {
     if (numeroConcurso !== null) {
@@ -30,6 +38,26 @@ const PesquisarSorteioScreen: React.FC = () => {
       }
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <View
@@ -125,13 +153,7 @@ const PesquisarSorteioScreen: React.FC = () => {
           </Text>
         </TouchableOpacity>
       </View>
-      {concursoEncontradoState !== null ? (
-        <CardHistoricoResultadosScreen
-          concurso={concursoEncontradoState.concurso}
-          dezenas={concursoEncontradoState.Dezenas}
-          premio={concursoEncontradoState["Premio 15 Acertos"]}
-        />
-      ) : null}
+      {concursoEncontradoState ¹}
       <View></View>
     </View>
   );

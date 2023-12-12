@@ -184,6 +184,7 @@ const Card: FC<CardProps> = ({
           ></View>
         </View>
 
+        {/* sfdaggggggggggggggggggggggggggggggggggggggggg */}
         <View
           style={{
             width: 270,
@@ -392,6 +393,7 @@ const Card: FC<CardProps> = ({
             <Text style={{ fontSize: 16, color: Cores.cor5 }}>{premio11}</Text>
           </View>
         </View>
+
       </View>
     </View>
   );

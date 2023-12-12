@@ -14,7 +14,6 @@ const PesquisarSorteioScreen: React.FC = () => {
 
   const [numeroConcurso, setNumeroConcurso] = useState<number | null>(null);
   const [concursoEncontradoState, setConcursoEncontradoState] = useState(null);
-  console.log(concursoEncontradoState);
 
   const buscarConcurso = () => {
     if (numeroConcurso !== null) {
@@ -126,11 +125,29 @@ const PesquisarSorteioScreen: React.FC = () => {
         </TouchableOpacity>
       </View>
       {concursoEncontradoState !== null ? (
-        <CardHistoricoResultadosScreen
-          concurso={concursoEncontradoState.concurso}
-          dezenas={concursoEncontradoState.Dezenas}
-          premio={concursoEncontradoState["Premio 15 Acertos"]}
-        />
+        <>
+          <TouchableOpacity
+            style={{
+              borderRadius: 5,
+              backgroundColor: Cores.cor1,
+              width: 60,
+              marginLeft: 5,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onPress={buscarConcurso}
+          >
+            <Text
+              style={{
+                fontSize: 11,
+                fontWeight: "bold",
+                color: Cores.cor5,
+              }}
+            >
+              Buscar
+            </Text>
+          </TouchableOpacity>
+        </>
       ) : null}
       <View></View>
     </View>

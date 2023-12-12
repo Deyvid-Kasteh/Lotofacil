@@ -14,7 +14,6 @@ const PesquisarSorteioScreen: React.FC = () => {
 
   const [numeroConcurso, setNumeroConcurso] = useState<number | null>(null);
   const [concursoEncontradoState, setConcursoEncontradoState] = useState(null);
-  console.log(concursoEncontradoState);
 
   const buscarConcurso = () => {
     if (numeroConcurso !== null) {
