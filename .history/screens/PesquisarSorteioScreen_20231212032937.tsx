@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import * as Cores from "../assets/Cores";
 import LotofacilCompleta from "../assets/lotofacilCompleta.json";
@@ -7,12 +6,10 @@ import CardHistoricoResultadosScreen from "../components/CardHistoricoResultados
 
 const dadosConcursos = LotofacilCompleta;
 
-interface PesquisarSorteioProps {
-  navigation: any;
-}
-
-const PesquisarSorteioScreen: React.FC<PesquisarSorteioProps> = ({
+const PesquisarSorteioScreen: React.FC = ({
   navigation,
+}: {
+  navigation: any;
 }) => {
   interface Concurso {
     concurso: number;
@@ -22,19 +19,6 @@ const PesquisarSorteioScreen: React.FC<PesquisarSorteioProps> = ({
   const [numeroConcurso, setNumeroConcurso] = useState<number | null>(null);
   const [concursoEncontradoState, setConcursoEncontradoState] = useState(null);
   console.log(concursoEncontradoState);
-
-
-
-  const onPressHandler = () => {
-    // Passar a informação dinâmica como segundo argumento
-    navigation.navigate("Jogo", { informacao: concursoEncontradoState });
-  };
-
-
-
-
-
-
 
   const buscarConcurso = () => {
     if (numeroConcurso !== null) {
@@ -146,7 +130,7 @@ const PesquisarSorteioScreen: React.FC<PesquisarSorteioProps> = ({
         </TouchableOpacity>
       </View>
       {concursoEncontradoState !== null ? (
-        <TouchableOpacity onPress={onPressHandler}>
+        <TouchableOpacity>
           <CardHistoricoResultadosScreen
             concurso={concursoEncontradoState.concurso}
             dezenas={concursoEncontradoState.Dezenas}

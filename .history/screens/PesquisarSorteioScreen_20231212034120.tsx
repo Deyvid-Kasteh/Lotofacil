@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
+
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import * as Cores from "../assets/Cores";
 import LotofacilCompleta from "../assets/lotofacilCompleta.json";

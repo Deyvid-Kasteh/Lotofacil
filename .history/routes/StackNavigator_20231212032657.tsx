@@ -1,5 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
+import { View, Text } from "react-native";
 import DrawerLotofacil from "./Drawer";
 import Jogo from "../pages/Jogo";
 
@@ -10,7 +11,7 @@ const StackNavigator = () => {
     <Stack.Navigator>
       <Stack.Group>
         <Stack.Screen
-          name="Drawer"
+          name="F"
           component={DrawerLotofacil}
           options={{ headerShown: false }}
         />

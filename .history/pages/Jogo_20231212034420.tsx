@@ -9,6 +9,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
         console.log("Dentro do Modal");
     console.log(informacaoRecebida);
         console.log("Dentro do Modal");
+        console.log("Dentro do Modal");
 
 
 

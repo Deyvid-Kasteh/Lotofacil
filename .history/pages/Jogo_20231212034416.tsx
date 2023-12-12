@@ -8,7 +8,6 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
     const informacaoRecebida = route.params?.informacao || "Informação Padrão";
         console.log("Dentro do Modal");
     console.log(informacaoRecebida);
-        console.log("Dentro do Modal");
 
 
 

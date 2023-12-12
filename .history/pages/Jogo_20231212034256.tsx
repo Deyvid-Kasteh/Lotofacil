@@ -6,11 +6,7 @@ import { View, Text, Button, Modal } from "react-native";
 const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
     // Receber as informações passadas
     const informacaoRecebida = route.params?.informacao || "Informação Padrão";
-        console.log("Dentro do Modal");
-    console.log(informacaoRecebida);
-        console.log("Dentro do Modal");
-
-
+    console.log(informacaoRecebida)
 
   return (
     <View>
@@ -21,3 +17,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
 };
 
 export default Jogo
+
+
+
+
