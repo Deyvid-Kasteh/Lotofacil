@@ -257,7 +257,7 @@ const CriarJogoScreen: React.FC = () => {
             paddingRight: 10,
           }}
         >
-          {chosenNumbers.length > 14 ? (
+          {chosenNumbers.length > 0 ? (
             <>
               <BouncyCheckbox
                 size={20}

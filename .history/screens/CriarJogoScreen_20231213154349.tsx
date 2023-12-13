@@ -256,39 +256,16 @@ const CriarJogoScreen: React.FC = () => {
             paddingLeft: 10,
             paddingRight: 10,
           }}
-        >
-          {chosenNumbers.length > 14 ? (
-            <>
-              <BouncyCheckbox
-                size={20}
-                fillColor={Cores.cor5}
-                unfillColor={Cores.cor1}
-                // text="Custom Checkbox"
-                // innerIconStyle={{ borderWidth: 2 }}
-                // onPress={(isChecked: boolean) => {}}
-                onPress={(isChecked: boolean = false) =>
-                  setCheckboxState(!checkboxState)
-                }
-              />
-              {checkboxState === true ? (
-                <Text
-                  style={{
-                    color: Cores.cor5,
-                  }}
-                >
-                  Vinculado
-                </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: Cores.cor1,
-                  }}
-                >
-                  Vincular ao próximo concurso
-                </Text>
-              )}
-            </>
-          ) : null}
+        >{chosenNumbers.length > 0 ? ( <>> ): null}
+
+
+
+
+
+
+
+
+
         </View>
       </View>
       {bolhasSelecionadas === 15 ? (

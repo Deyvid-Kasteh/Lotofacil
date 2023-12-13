@@ -16,7 +16,7 @@ const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const bolhasSelecionadas = chosenNumbers.length;
-  console.log(checkboxState);
+  console.log(chosenNumbers);
 
   const onSaveJogoPress = async () => {
     if (bolhasSelecionadas === 15) {
@@ -59,7 +59,7 @@ const CriarJogoScreen: React.FC = () => {
   };
 
   const handleGameDelete = () => {
-    setChosenNumbers([]);
+    setChosenNumbers([])
   };
 
   return (
@@ -248,7 +248,7 @@ const CriarJogoScreen: React.FC = () => {
             borderRadius: 20,
             flexWrap: "nowrap",
             flexDirection: "row",
-            // marginTop: 10,
+            marginTop: 10,
             marginLeft: 10,
             marginRight: 10,
             alignItems: "center",
@@ -257,38 +257,18 @@ const CriarJogoScreen: React.FC = () => {
             paddingRight: 10,
           }}
         >
-          {chosenNumbers.length > 14 ? (
-            <>
-              <BouncyCheckbox
-                size={20}
-                fillColor={Cores.cor5}
-                unfillColor={Cores.cor1}
-                // text="Custom Checkbox"
-                // innerIconStyle={{ borderWidth: 2 }}
-                // onPress={(isChecked: boolean) => {}}
-                onPress={(isChecked: boolean = false) =>
-                  setCheckboxState(!checkboxState)
-                }
-              />
-              {checkboxState === true ? (
-                <Text
-                  style={{
-                    color: Cores.cor5,
-                  }}
-                >
-                  Vinculado
-                </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: Cores.cor1,
-                  }}
-                >
-                  Vincular ao próximo concurso
-                </Text>
-              )}
-            </>
-          ) : null}
+          <BouncyCheckbox
+            size={16}
+            fillColor={Cores.cor5}
+            unfillColor={Cores.cor3}
+            // text="Custom Checkbox"
+            innerIconStyle={{ borderWidth: 2 }}
+            // onPress={(isChecked: boolean) => {}}
+            onPress={(isChecked: boolean = false) =>
+              setCheckboxState(!checkboxState)
+            }
+          />
+          <Text>Vincular ao próximo concurso</Text>
         </View>
       </View>
       {bolhasSelecionadas === 15 ? (

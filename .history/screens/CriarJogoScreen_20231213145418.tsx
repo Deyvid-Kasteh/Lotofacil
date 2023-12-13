@@ -5,7 +5,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import Bolhas from "../components/Bolhas";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const dezenasParaEscolher: number[] = Array.from(
   { length: 25 },
@@ -14,9 +13,8 @@ const dezenasParaEscolher: number[] = Array.from(
 
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
-  const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const bolhasSelecionadas = chosenNumbers.length;
-  console.log(checkboxState);
+  console.log(chosenNumbers);
 
   const onSaveJogoPress = async () => {
     if (bolhasSelecionadas === 15) {
@@ -56,10 +54,6 @@ const CriarJogoScreen: React.FC = () => {
         setChosenNumbers([...chosenNumbers, numero]);
       }
     }
-  };
-
-  const handleGameDelete = () => {
-    setChosenNumbers([]);
   };
 
   return (
@@ -162,12 +156,13 @@ const CriarJogoScreen: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        <Text>Fazer jogo aleatório</Text>
+        <Text>Números selecionados </Text>
         <View
           style={{
             width: 340,
             height: 26,
             backgroundColor: Cores.cor2,
+            borderColor: "black",
             borderRadius: 20,
             flexWrap: "nowrap",
             flexDirection: "row",
@@ -195,7 +190,9 @@ const CriarJogoScreen: React.FC = () => {
                 fontSize: 11,
                 color: Cores.cor5,
               }}
-            ></Text>
+            >
+              1000
+            </Text>
           </View>
           <View
             style={{
@@ -203,6 +200,27 @@ const CriarJogoScreen: React.FC = () => {
               flexDirection: "row",
             }}
           >
+            {/* <View
+              key="2"
+              style={{
+                width: 14,
+                height: 14,
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: 5,
+                backgroundColor: Cores.cor1,
+                margin: 1,
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 9,
+                  color: Cores.cor5,
+                }}
+              >
+                12
+              </Text>
+            </View> */}
             {chosenNumbers?.map((numero, index) => (
               <View
                 key={index}
@@ -227,70 +245,44 @@ const CriarJogoScreen: React.FC = () => {
               </View>
             ))}
           </View>
-          {chosenNumbers.length > 0 ? (
-            <TouchableOpacity
+          {/* <View
+            style={{
+              borderRadius: 5,
+              backgroundColor: Cores.cor1,
+              width: 70,
+              marginLeft: 2,
+              justifyContent: "center",
+              alignItems: "center",
+              padding: 2,
+            }}
+          >
+            <Text
               style={{
-                borderRadius: 50,
-                backgroundColor: Cores.cor1,
-              }}
-              onPress={() => {
-                handleGameDelete(), console.log("Game deleted");
+                fontSize: 9,
+                fontWeight: "bold",
+                color: Cores.cor5,
               }}
             >
-              <AntDesign name="closecircle" size={16} color="#D96248" />
-            </TouchableOpacity>
-          ) : null}
-        </View>
-        <View
-          style={{
-            width: 310,
-            height: 26,
-            borderRadius: 20,
-            flexWrap: "nowrap",
-            flexDirection: "row",
-            // marginTop: 10,
-            marginLeft: 10,
-            marginRight: 10,
-            alignItems: "center",
-            justifyContent: "flex-start",
-            paddingLeft: 10,
-            paddingRight: 10,
-          }}
-        >
-          {chosenNumbers.length > 14 ? (
-            <>
-              <BouncyCheckbox
-                size={20}
-                fillColor={Cores.cor5}
-                unfillColor={Cores.cor1}
-                // text="Custom Checkbox"
-                // innerIconStyle={{ borderWidth: 2 }}
-                // onPress={(isChecked: boolean) => {}}
-                onPress={(isChecked: boolean = false) =>
-                  setCheckboxState(!checkboxState)
-                }
-              />
-              {checkboxState === true ? (
-                <Text
-                  style={{
-                    color: Cores.cor5,
-                  }}
-                >
-                  Vinculado
-                </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: Cores.cor1,
-                  }}
-                >
-                  Vincular ao próximo concurso
-                </Text>
-              )}
-            </>
-          ) : null}
+              premio
+            </Text>
+          </View> */}
+          <TouchableOpacity
+            style={{
+              width: 20,
+              height: 20,
+              alignItems: "center",
+              justifyContent: "center",
+              borderRadius: 50,
+              backgroundColor: Cores.cor1,
+              marginLeft: 16,
+            }}
+          >
+            <AntDesign name="closecircle" size={14} color="#D96248" />
+          </TouchableOpacity>
         </View>
       </View>
+      <Text>Vinculado a concurso CHECKBOX</Text>
+      <Text>Fazer jogo aleatório</Text>
       {bolhasSelecionadas === 15 ? (
         <View
           style={{
@@ -301,6 +293,7 @@ const CriarJogoScreen: React.FC = () => {
             backgroundColor: Cores.cor1,
             borderRadius: 50,
             marginTop: 10,
+
             marginBottom: 10,
           }}
         >
