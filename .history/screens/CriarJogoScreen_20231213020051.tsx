@@ -76,22 +76,18 @@ const CriarJogoScreen: React.FC = () => {
       >
         <View
           style={{
-            width: 250,
-            height: 40,
-            elevation: 5,
-
+            width: 200,
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: Cores.cor1,
             borderBottomRightRadius: 50,
             borderBottomLeftRadius: 50,
-            marginBottom: 10,
           }}
         >
           <Text
             style={{
-              fontSize: 20,
-              color: Cores.cor5,
+              fontSize: 16,
+              col
             }}
           >
             Escolha 15 números
@@ -114,66 +110,21 @@ const CriarJogoScreen: React.FC = () => {
             />
           ))}
         </View>
-        {bolhasSelecionadas === 15 ? (
-          <View
+        <View key="números" style={{}}>
+          <Text
             style={{
-              width: 250,
-              height: 80,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: Cores.cor1,
-              borderRadius: 50,
-              marginTop: 10,
-
-              marginBottom: 10,
+              fontSize: 16,
             }}
           >
-            <TouchableOpacity onPress={onSaveJogoPress}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontWeight: "bold",
-                  color: Cores.cor5,
-                }}
-              >
-                SALVAR JOGO
-              </Text>
-            </TouchableOpacity>
-          </View>
-        ) : (
-          <View
-            key="números"
-            style={{
-              width: 250,
-              height: 50,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: Cores.cor1,
-              borderTopRightRadius: 50,
-              borderTopLeftRadius: 50,
-              marginTop: 10,
-            }}
-          >
-            <Text
-              style={{
-                  fontSize: 16,
-                fontWeight: "bold",
-                color: Cores.cor5,
-              }}
-            >
-              {bolhasSelecionadas}
-            </Text>
-            <Text
-              style={{
-                fontSize: 16,
-                color: Cores.cor5,
-              }}
-            >
-              números selecionados
-            </Text>
-          </View>
-        )}
+            {bolhasSelecionadas} números selecionados
+          </Text>
+          <TouchableOpacity onPress={onSaveJogoPress}>
+            <Text>SALVAR JOGO</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+      <Text>CriarJogoScreen</Text>
+      <Text>Numeros</Text>
       <Text>Vinculado a concurso CHECKBOX</Text>
     </View>
   );

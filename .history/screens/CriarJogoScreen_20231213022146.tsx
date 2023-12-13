@@ -145,7 +145,7 @@ const CriarJogoScreen: React.FC = () => {
             key="números"
             style={{
               width: 250,
-              height: 50,
+              height: 40,
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: Cores.cor1,
@@ -156,12 +156,11 @@ const CriarJogoScreen: React.FC = () => {
           >
             <Text
               style={{
-                  fontSize: 16,
-                fontWeight: "bold",
+                fontSize: 16,
                 color: Cores.cor5,
               }}
             >
-              {bolhasSelecionadas}
+              {bolhasSelecionadas} números selecionados
             </Text>
             <Text
               style={{
@@ -169,11 +168,13 @@ const CriarJogoScreen: React.FC = () => {
                 color: Cores.cor5,
               }}
             >
-              números selecionados
+             números selecionados
             </Text>
           </View>
         )}
       </View>
+      <Text>CriarJogoScreen</Text>
+      <Text>Numeros</Text>
       <Text>Vinculado a concurso CHECKBOX</Text>
     </View>
   );

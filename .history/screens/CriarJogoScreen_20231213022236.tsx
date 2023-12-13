@@ -174,6 +174,8 @@ const CriarJogoScreen: React.FC = () => {
           </View>
         )}
       </View>
+      <Text>CriarJogoScreen</Text>
+      <Text>Numeros</Text>
       <Text>Vinculado a concurso CHECKBOX</Text>
     </View>
   );

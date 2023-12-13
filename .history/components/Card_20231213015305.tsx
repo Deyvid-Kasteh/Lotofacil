@@ -52,7 +52,7 @@ const Card: FC<CardProps> = ({
       >
         <View
           style={{
-            width: 350,
+            // width: 350,
             paddingTop: 10,
             paddingLeft: 10,
             paddingRight: 10,

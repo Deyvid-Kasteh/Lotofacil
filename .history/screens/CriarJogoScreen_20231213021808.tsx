@@ -114,17 +114,38 @@ const CriarJogoScreen: React.FC = () => {
             />
           ))}
         </View>
+        <View
+          key="números"
+          style={{
+            width: 250,
+            height: 40,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: Cores.cor1,
+            borderTopRightRadius: 50,
+            borderTopLeftRadius: 50,
+            marginTop: 10,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              color: Cores.cor5,
+            }}
+          >
+            {bolhasSelecionadas} números selecionados
+          </Text>
+        </View>
         {bolhasSelecionadas === 15 ? (
           <View
             style={{
               width: 250,
-              height: 80,
+              height: 40,
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: Cores.cor1,
-              borderRadius: 50,
-              marginTop: 10,
-
+              borderBottomRightRadius: 50,
+              borderBottomLeftRadius: 50,
               marginBottom: 10,
             }}
           >
@@ -140,40 +161,10 @@ const CriarJogoScreen: React.FC = () => {
               </Text>
             </TouchableOpacity>
           </View>
-        ) : (
-          <View
-            key="números"
-            style={{
-              width: 250,
-              height: 50,
-              justifyContent: "center",
-              alignItems: "center",
-              backgroundColor: Cores.cor1,
-              borderTopRightRadius: 50,
-              borderTopLeftRadius: 50,
-              marginTop: 10,
-            }}
-          >
-            <Text
-              style={{
-                  fontSize: 16,
-                fontWeight: "bold",
-                color: Cores.cor5,
-              }}
-            >
-              {bolhasSelecionadas}
-            </Text>
-            <Text
-              style={{
-                fontSize: 16,
-                color: Cores.cor5,
-              }}
-            >
-              números selecionados
-            </Text>
-          </View>
-        )}
+        ) : ()}
       </View>
+      <Text>CriarJogoScreen</Text>
+      <Text>Numeros</Text>
       <Text>Vinculado a concurso CHECKBOX</Text>
     </View>
   );

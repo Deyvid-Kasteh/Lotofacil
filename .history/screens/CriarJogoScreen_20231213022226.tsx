@@ -145,7 +145,7 @@ const CriarJogoScreen: React.FC = () => {
             key="números"
             style={{
               width: 250,
-              height: 50,
+              height: 44,
               justifyContent: "center",
               alignItems: "center",
               backgroundColor: Cores.cor1,
@@ -174,6 +174,8 @@ const CriarJogoScreen: React.FC = () => {
           </View>
         )}
       </View>
+      <Text>CriarJogoScreen</Text>
+      <Text>Numeros</Text>
       <Text>Vinculado a concurso CHECKBOX</Text>
     </View>
   );
