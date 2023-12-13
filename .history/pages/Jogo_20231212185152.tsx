@@ -41,7 +41,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
         premio11={informacaoRecebida["Premio 11 Acertos"]}
       />
       <Text>Jogo dncjkdfbvjr</Text>
-      <Button title="Voltar" onPress={() => navigation.goBack()} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 };

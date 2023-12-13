@@ -16,11 +16,7 @@ const StackNavigator = () => {
         />
       </Stack.Group>
       <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen
-          name="Sorteio"
-          component={Jogo}
-          options={{ headerShown: true, headerTitleAlign: "center" }}
-        />
+        <Stack.Screen name="Sorteio" component={Jogo} />
       </Stack.Group>
     </Stack.Navigator>
   );

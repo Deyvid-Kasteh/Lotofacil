@@ -141,15 +141,7 @@ const Card: FC<CardProps> = ({
             }}
           >
             <View>
-              <Text style={{ color: Cores.cor5 }}>
-                {" "}
-                <MaterialIcons
-                  name="emoji-people"
-                  size={16}
-                  color={Cores.cor5}
-                />
-                Ganhadores:
-              </Text>
+              <Text style={{ color: Cores.cor5 }}>Ganhadores:</Text>
             </View>
             <View>
               <Text style={{ fontSize: 16, color: Cores.cor5 }}>

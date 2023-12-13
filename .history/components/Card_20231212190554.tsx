@@ -145,7 +145,7 @@ const Card: FC<CardProps> = ({
                 {" "}
                 <MaterialIcons
                   name="emoji-people"
-                  size={16}
+                  size={20}
                   color={Cores.cor5}
                 />
                 Ganhadores:

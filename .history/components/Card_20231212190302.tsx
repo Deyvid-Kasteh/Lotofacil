@@ -125,10 +125,10 @@ const Card: FC<CardProps> = ({
               width: 270,
               backgroundColor: Cores.cor1,
               alignItems: "center",
-              flexDirection: "row",
-              justifyContent: "center",
+              flex
             }}
           >
+            <MaterialIcons name="attach-money" size={28} color={Cores.cor5} />
             <Text style={{ fontSize: 28, color: Cores.cor5 }}>{premio15}</Text>
           </View>
           <View
@@ -142,12 +142,7 @@ const Card: FC<CardProps> = ({
           >
             <View>
               <Text style={{ color: Cores.cor5 }}>
-                {" "}
-                <MaterialIcons
-                  name="emoji-people"
-                  size={16}
-                  color={Cores.cor5}
-                />
+                <MaterialIcons name="place" size={18} color={Cores.cor5} />
                 Ganhadores:
               </Text>
             </View>
@@ -167,7 +162,6 @@ const Card: FC<CardProps> = ({
           >
             <View>
               <Text style={{ fontSize: 12, color: Cores.cor5 }}>
-                <MaterialIcons name="place" size={16} color={Cores.cor5} />
                 Cidade / UF:
               </Text>
             </View>

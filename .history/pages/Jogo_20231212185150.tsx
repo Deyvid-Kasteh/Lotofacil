@@ -37,11 +37,11 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
         premio15={informacaoRecebida["Premio 15 Acertos"]}
         premio14={informacaoRecebida["Premio 14 Acertos"]}
         premio13={informacaoRecebida["Premio 13 Acertos"]}
-        premio12={informacaoRecebida["Premio 12 Acertos"]}
-        premio11={informacaoRecebida["Premio 11 Acertos"]}
+        premio12={lotofacilLatest["Premio 12 Acertos"]}
+        premio11={lotofacilLatest["Premio 11 Acertos"]}
       />
       <Text>Jogo dncjkdfbvjr</Text>
-      <Button title="Voltar" onPress={() => navigation.goBack()} />
+      <Button title="Go back" onPress={() => navigation.goBack()} />
     </View>
   );
 };
