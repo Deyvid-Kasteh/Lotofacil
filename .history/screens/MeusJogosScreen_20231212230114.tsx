@@ -1,6 +1,7 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react'
+import { View, Text } from 'react-native'
 import * as Cores from "../assets/Cores";
+
 
 const MeusJogosScreen = () => {
   return (
@@ -12,11 +13,15 @@ const MeusJogosScreen = () => {
         backgroundColor: Cores.cor3,
       }}
     >
-      <Text>data de criação</Text>
       <Text>Numeros</Text>
       <Text>Vinculado a concurso</Text>
+      <Text>data de criação</Text>
+      <Text>MeusJogosScreen</Text>
+      <Text>MeusJogosScreen</Text>
+      <Text>MeusJogosScreen</Text>
+      <Text>MeusJogosScreen</Text>
     </View>
   );
-};
+}
 
-export default MeusJogosScreen;
+export default MeusJogosScreen

@@ -1,6 +1,4 @@
 import React from "react";
-import * as Cores from "../assets/Cores";
-
 import { createStackNavigator } from "@react-navigation/stack";
 import DrawerLotofacil from "./Drawer";
 import Jogo from "../pages/Jogo";
@@ -17,16 +15,12 @@ const StackNavigator = () => {
           options={{ headerShown: false }}
         />
       </Stack.Group>
-      <Stack.Group
-        screenOptions={{
-          presentation: "modal",
-          headerStyle: { backgroundColor: Cores.cor5 },
-        }}
-      >
+      <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen
           name="Sorteio"
           component={Jogo}
           options={{ headerShown: true, headerTitleAlign: "center" }}
+          screenOptions
         />
       </Stack.Group>
     </Stack.Navigator>

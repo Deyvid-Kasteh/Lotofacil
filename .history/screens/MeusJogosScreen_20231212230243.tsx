@@ -15,6 +15,7 @@ const MeusJogosScreen = () => {
       <Text>data de criação</Text>
       <Text>Numeros</Text>
       <Text>Vinculado a concurso</Text>
+      
     </View>
   );
 };

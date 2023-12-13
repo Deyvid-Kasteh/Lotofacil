@@ -17,12 +17,10 @@ const StackNavigator = () => {
           options={{ headerShown: false }}
         />
       </Stack.Group>
-      <Stack.Group
-        screenOptions={{
-          presentation: "modal",
-          headerStyle: { backgroundColor: Cores.cor5 },
-        }}
-      >
+      <Stack.Group screenOptions={{
+        presentation: "modal",
+        headerStyle: {}
+      }}>
         <Stack.Screen
           name="Sorteio"
           component={Jogo}
