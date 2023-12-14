@@ -17,6 +17,7 @@ const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const bolhasSelecionadas = chosenNumbers.length;
+  console.log(checkboxState);
 
   function gerarNumerosAleatorios(): number[] {
     const numerosUnicos: number[] = [];
@@ -81,9 +82,9 @@ const CriarJogoScreen: React.FC = () => {
     <View
       style={{
         flex: 1,
-        // padding: 10,
+        padding: 10,
         alignItems: "center",
-        justifyContent: "flex-start",
+        justifyContent: "space-around",
         backgroundColor: Cores.cor3,
       }}
     >
@@ -98,8 +99,6 @@ const CriarJogoScreen: React.FC = () => {
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: Cores.cor4,
-          marginTop: 20,
-          marginBottom: 30,
         }}
       >
         <View
@@ -122,7 +121,7 @@ const CriarJogoScreen: React.FC = () => {
               color: Cores.cor5,
             }}
           >
-            Escolha {15 - bolhasSelecionadas} números
+            Escolha 15 números
           </Text>
         </View>
         <View
@@ -142,134 +141,37 @@ const CriarJogoScreen: React.FC = () => {
             />
           ))}
         </View>
-      </View>
-
-      <View
-        style={{
-          alignItems: "center",
-          justifyContent: "center",
-          height: 56,
-          // backgroundColor: Cores.cor5,
-          marginBottom: 40,
-        }}
-      >
-        {chosenNumbers.length > 0 ? (
-          <>
-            <View
-              style={{
-                width: 340,
-                height: 26,
-                backgroundColor: Cores.cor2,
-                borderRadius: 20,
-                flexWrap: "nowrap",
-                flexDirection: "row",
-                marginTop: 10,
-                marginLeft: 10,
-                marginRight: 10,
-                alignItems: "center",
-                justifyContent: "space-between",
-                paddingLeft: 10,
-                paddingRight: 10,
-              }}
-            >
-              <TouchableOpacity
-                style={{
-                  borderRadius: 5,
-                  backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
-                  width: 40,
-                  marginLeft: 2,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onPress={() => setCheckboxState(!checkboxState)}
-              >
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: Cores.cor1,
-                  }}
-                >
-                  2957
-                </Text>
-              </TouchableOpacity>
-              <View
-                style={{
-                  flexWrap: "nowrap",
-                  flexDirection: "row",
-                }}
-              >
-                {chosenNumbers?.map((numero, index) => (
-                  <View
-                    key={index}
-                    style={{
-                      width: 14,
-                      height: 14,
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: 5,
-                      backgroundColor: Cores.cor1,
-                      margin: 1,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 9,
-                        color: Cores.cor5,
-                      }}
-                    >
-                      {numero}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 50,
-                  backgroundColor: Cores.cor1,
-                }}
-                onPress={() => {
-                  handleGameDelete(), console.log("Game deleted");
-                }}
-              >
-                <AntDesign name="closecircle" size={16} color="#D96248" />
-              </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                width: 324,
-                height: 26,
-                borderRadius: 20,
-                flexWrap: "nowrap",
-                flexDirection: "row",
-                // marginTop: 10,
-                // marginLeft: 10,
-                marginRight: 10,
-                alignItems: "center",
-                justifyContent: "flex-start",
-                paddingLeft: 10,
-                paddingRight: 10,
-              }}
-            >
-              {checkboxState === true ? (
-                <Text
-                  style={{
-                    color: Cores.cor5,
-                  }}
-                >
-                  Vinculado
-                </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: Cores.cor1,
-                  }}
-                >
-                  Vincular ao próximo concurso
-                </Text>
-              )}
-            </View>
-          </>
-        ) : null}
+        {/* <View
+          key="números"
+          style={{
+            width: 250,
+            height: 50,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: Cores.cor1,
+            borderTopRightRadius: 50,
+            borderTopLeftRadius: 50,
+            marginTop: 10,
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              fontWeight: "bold",
+              color: Cores.cor5,
+            }}
+          >
+            {bolhasSelecionadas}
+          </Text>
+          <Text
+            style={{
+              fontSize: 16,
+              color: Cores.cor5,
+            }}
+          >
+            números selecionados
+          </Text>
+        </View> */}
       </View>
       <TouchableOpacity
         style={{
@@ -283,7 +185,6 @@ const CriarJogoScreen: React.FC = () => {
           justifyContent: "space-evenly",
           paddingLeft: 10,
           paddingRight: 10,
-          marginBottom: 20,
         }}
         onPress={() => gerarNumerosAleatorios()}
       >
@@ -297,8 +198,133 @@ const CriarJogoScreen: React.FC = () => {
           Números aleatórios
         </Text>
       </TouchableOpacity>
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <View
+          style={{
+            width: 340,
+            height: 26,
+            backgroundColor: Cores.cor2,
+            borderRadius: 20,
+            flexWrap: "nowrap",
+            flexDirection: "row",
+            marginTop: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            alignItems: "center",
+            justifyContent: "space-between",
+            paddingLeft: 10,
+            paddingRight: 10,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              borderRadius: 5,
+              backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
+              width: 40,
+              marginLeft: 2,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onPress={() => setCheckboxState(!checkboxState)}
+          >
+            <Text
+              style={{
+                fontSize: 12,
+                color: Cores.cor1,
+              }}
+            >
+              2957
+            </Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              flexWrap: "nowrap",
+              flexDirection: "row",
+            }}
+          >
+            {chosenNumbers?.map((numero, index) => (
+              <View
+                key={index}
+                style={{
+                  width: 14,
+                  height: 14,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: 5,
+                  backgroundColor: Cores.cor1,
+                  margin: 1,
+                }}
+              >
+                <Text
+                  style={{
+                    fontSize: 9,
+                    color: Cores.cor5,
+                  }}
+                >
+                  {numero}
+                </Text>
+              </View>
+            ))}
+          </View>
+          {chosenNumbers.length > 0 ? (
+            <TouchableOpacity
+              style={{
+                borderRadius: 50,
+                backgroundColor: Cores.cor1,
+              }}
+              onPress={() => {
+                handleGameDelete(), console.log("Game deleted");
+              }}
+            >
+              <AntDesign name="closecircle" size={16} color="#D96248" />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+        <View
+          style={{
+            width: 324,
+            height: 26,
+            borderRadius: 20,
+            flexWrap: "nowrap",
+            flexDirection: "row",
+            // marginTop: 10,
+            // marginLeft: 10,
+            marginRight: 10,
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingLeft: 10,
+            paddingRight: 10,
+          }}
+        >
+          {checkboxState === true ? (
+            <Text
+              style={{
+                color: Cores.cor5,
+              }}
+            >
+              Vinculado
+            </Text>
+          ) : (
+            <Text
+              style={{
+                color: Cores.cor1,
+              }}
+            >
+              Vincular ao próximo concurso
+            </Text>
+          )}
+
+          {/* // onPress={(isChecked: boolean = false) =>
+                //   setCheckboxState(!checkboxState) */}
+        </View>
+      </View>
       {bolhasSelecionadas === 15 ? (
-        <TouchableOpacity
+        <View
           style={{
             width: 250,
             height: 60,
@@ -306,22 +332,25 @@ const CriarJogoScreen: React.FC = () => {
             alignItems: "center",
             backgroundColor: Cores.cor1,
             borderRadius: 20,
-            elevation: 10,
+            marginTop: 10,
+            marginBottom: 10,
+            elevation: 2,
           }}
-          onPress={onSaveJogoPress}
         >
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: "bold",
-              color: Cores.cor5,
-            }}
-          >
-            SALVAR JOGO
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={onSaveJogoPress}>
+            <Text
+              style={{
+                fontSize: 30,
+                fontWeight: "bold",
+                color: Cores.cor5,
+              }}
+            >
+              SALVAR JOGO
+            </Text>
+          </TouchableOpacity>
+        </View>
       ) : (
-        <TouchableOpacity
+        <View
           style={{
             width: 250,
             height: 60,
@@ -329,20 +358,23 @@ const CriarJogoScreen: React.FC = () => {
             alignItems: "center",
             backgroundColor: Cores.cor2,
             borderRadius: 20,
+            marginTop: 10,
+            marginBottom: 10,
           }}
-          onPress={onSaveJogoPress}
         >
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: "bold",
-              color: Cores.cor3,
-              textDecorationLine: "line-through",
-            }}
-          >
-            SALVAR JOGO
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity onPress={onSaveJogoPress}>
+            <Text
+              style={{
+                fontSize: 30,
+                fontWeight: "bold",
+                color: Cores.cor3,
+                textDecorationLine: "line-through",
+              }}
+            >
+              SALVAR JOGO
+            </Text>
+          </TouchableOpacity>
+        </View>
       )}
     </View>
   );

@@ -153,123 +153,121 @@ const CriarJogoScreen: React.FC = () => {
           marginBottom: 40,
         }}
       >
-        {chosenNumbers.length > 0 ? (
-          <>
-            <View
+        <View
+          style={{
+            width: 340,
+            height: 26,
+            backgroundColor: Cores.cor2,
+            borderRadius: 20,
+            flexWrap: "nowrap",
+            flexDirection: "row",
+            marginTop: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            alignItems: "center",
+            justifyContent: "space-between",
+            paddingLeft: 10,
+            paddingRight: 10,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              borderRadius: 5,
+              backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
+              width: 40,
+              marginLeft: 2,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onPress={() => setCheckboxState(!checkboxState)}
+          >
+            <Text
               style={{
-                width: 340,
-                height: 26,
-                backgroundColor: Cores.cor2,
-                borderRadius: 20,
-                flexWrap: "nowrap",
-                flexDirection: "row",
-                marginTop: 10,
-                marginLeft: 10,
-                marginRight: 10,
-                alignItems: "center",
-                justifyContent: "space-between",
-                paddingLeft: 10,
-                paddingRight: 10,
+                fontSize: 12,
+                color: Cores.cor1,
               }}
             >
-              <TouchableOpacity
-                style={{
-                  borderRadius: 5,
-                  backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
-                  width: 40,
-                  marginLeft: 2,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-                onPress={() => setCheckboxState(!checkboxState)}
-              >
-                <Text
-                  style={{
-                    fontSize: 12,
-                    color: Cores.cor1,
-                  }}
-                >
-                  2957
-                </Text>
-              </TouchableOpacity>
+              2957
+            </Text>
+          </TouchableOpacity>
+          <View
+            style={{
+              flexWrap: "nowrap",
+              flexDirection: "row",
+            }}
+          >
+            {chosenNumbers?.map((numero, index) => (
               <View
+                key={index}
                 style={{
-                  flexWrap: "nowrap",
-                  flexDirection: "row",
-                }}
-              >
-                {chosenNumbers?.map((numero, index) => (
-                  <View
-                    key={index}
-                    style={{
-                      width: 14,
-                      height: 14,
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: 5,
-                      backgroundColor: Cores.cor1,
-                      margin: 1,
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 9,
-                        color: Cores.cor5,
-                      }}
-                    >
-                      {numero}
-                    </Text>
-                  </View>
-                ))}
-              </View>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 50,
+                  width: 14,
+                  height: 14,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: 5,
                   backgroundColor: Cores.cor1,
-                }}
-                onPress={() => {
-                  handleGameDelete(), console.log("Game deleted");
+                  margin: 1,
                 }}
               >
-                <AntDesign name="closecircle" size={16} color="#D96248" />
-              </TouchableOpacity>
-            </View>
-            <View
-              style={{
-                width: 324,
-                height: 26,
-                borderRadius: 20,
-                flexWrap: "nowrap",
-                flexDirection: "row",
-                // marginTop: 10,
-                // marginLeft: 10,
-                marginRight: 10,
-                alignItems: "center",
-                justifyContent: "flex-start",
-                paddingLeft: 10,
-                paddingRight: 10,
-              }}
-            >
-              {checkboxState === true ? (
                 <Text
                   style={{
+                    fontSize: 9,
                     color: Cores.cor5,
                   }}
                 >
-                  Vinculado
+                  {numero}
                 </Text>
-              ) : (
-                <Text
-                  style={{
-                    color: Cores.cor1,
-                  }}
-                >
-                  Vincular ao próximo concurso
-                </Text>
-              )}
-            </View>
-          </>
-        ) : null}
+              </View>
+            ))}
+          </View>
+          {chosenNumbers.length > 0 ? (
+            <TouchableOpacity
+              style={{
+                borderRadius: 50,
+                backgroundColor: Cores.cor1,
+              }}
+              onPress={() => {
+                handleGameDelete(), console.log("Game deleted");
+              }}
+            >
+              <AntDesign name="closecircle" size={16} color="#D96248" />
+            </TouchableOpacity>
+          ) : null}
+        </View>
+        <View
+          style={{
+            width: 324,
+            height: 26,
+            borderRadius: 20,
+            flexWrap: "nowrap",
+            flexDirection: "row",
+            // marginTop: 10,
+            // marginLeft: 10,
+            marginRight: 10,
+            alignItems: "center",
+            justifyContent: "flex-start",
+            paddingLeft: 10,
+            paddingRight: 10,
+          }}
+        >
+          {checkboxState === true ? (
+            <Text
+              style={{
+                color: Cores.cor5,
+              }}
+            >
+              Vinculado
+            </Text>
+          ) : (
+            <Text
+              style={{
+                color: Cores.cor1,
+              }}
+            >
+              Vincular ao próximo concurso
+            </Text>
+          )}
+        </View>
       </View>
       <TouchableOpacity
         style={{

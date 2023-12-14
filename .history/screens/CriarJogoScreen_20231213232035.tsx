@@ -222,17 +222,9 @@ const CriarJogoScreen: React.FC = () => {
                   </View>
                 ))}
               </View>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 50,
-                  backgroundColor: Cores.cor1,
-                }}
-                onPress={() => {
-                  handleGameDelete(), console.log("Game deleted");
-                }}
-              >
-                <AntDesign name="closecircle" size={16} color="#D96248" />
-              </TouchableOpacity>
+              {chosenNumbers.length > 0 ? (
+                
+              ) : null}
             </View>
             <View
               style={{
