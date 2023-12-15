@@ -1,43 +1,22 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { View, Text, FlatList, StyleSheet, RefreshControl } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 import * as Cores from "../assets/Cores";
-import CardMeusJogosScreen from "../components/CardMeusJogosScreen";
+
 
 const MeusJogosScreen = () => {
-  const [meusJogos, setMeusJogos] = useState(null);
-  const [refreshing, setRefreshing] = useState(false);
-
-  const fetchData = useCallback(async () => {
-    try {
-      const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
-      const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
-      setMeusJogos(jogosSalvos);
-      console.log(jogosSalvos);
-    } catch (error) {
-      console.error("Erro ao obter dados:", error);
-    }
-  }, []);
-
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    fetchData();
-    setRefreshing(false);
-  }, [fetchData]);
-
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  const renderItem = ({ item }) => (
-    <CardMeusJogosScreen
-      concurso={item.concurso}
-      numerosSelecionados={item.numerosSelecionados}
-      dataEHora={item.dataEHora.split(" ")[0]}
-    />
-  );
-
   return (
+    // <View
+    //   style={{
+    //     flex: 1,
+    //     padding: 10,
+    //     alignItems: "center",
+    //     backgroundColor: Cores.cor3,
+    //   }}
+    // >
+    //   <Text>data de criação</Text>
+    //   <Text>Numeros</Text>
+    //   <Text>Vinculado a concurso</Text>
+    // </View>
     <View
       style={{
         flex: 1,
@@ -46,6 +25,18 @@ const MeusJogosScreen = () => {
         justifyContent: "flex-start",
       }}
     >
+      <View>
+        <Text
+          style={{
+            fontSize: 28,
+            fontWeight: "bold",
+            color: Cores.cor5,
+            marginTop: 10,
+          }}
+        >
+          Todos os sorteios
+        </Text>
+      </View>
       <View
         style={{
           borderRadius: 16,
@@ -58,6 +49,7 @@ const MeusJogosScreen = () => {
           <View
             style={{
               width: 380,
+              height: 40,
               margin: 10,
               padding: 5,
               backgroundColor: Cores.cor4,
@@ -66,7 +58,59 @@ const MeusJogosScreen = () => {
               justifyContent: "space-between",
             }}
           >
-            {/* Cabeçalho da lista */}
+            <View
+              style={{
+                width: 120,
+                borderRadius: 5,
+                backgroundColor: Cores.cor1,
+                marginLeft: 5,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  fontSize: 11,
+                  color: Cores.cor5,
+                }}
+              >
+                Escolha o período:
+              </Text>
+            </View>
+
+            <TouchableOpacity
+              style={{
+                borderRadius: 5,
+                backgroundColor: Cores.cor1,
+                width: 60,
+                marginLeft: 5,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              onPress={() => BuscarPeriodo(value)}
+            >
+              <Text
+                style={{
+                  fontSize: 11,
+                  color: Cores.cor5,
+                }}
+              >
+                Buscar
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              width: 380,
+
+              margin: 10,
+              padding: 5,
+              backgroundColor: Cores.cor4,
+              borderRadius: 8,
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
             <View
               style={{
                 borderRadius: 5,
@@ -102,7 +146,7 @@ const MeusJogosScreen = () => {
                   color: Cores.cor5,
                 }}
               >
-                Números
+                Dezenas
               </Text>
             </View>
             <View
@@ -121,7 +165,7 @@ const MeusJogosScreen = () => {
                   color: Cores.cor5,
                 }}
               >
-                Data
+                Prêmio
               </Text>
             </View>
           </View>
@@ -130,14 +174,9 @@ const MeusJogosScreen = () => {
               maxHeight: 500, // Defina a altura máxima desejada
             }}
           >
-            <FlatList
-              data={meusJogos}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.dataEHora?.toString() || ""}
-              refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-              }
-            />
+            {resultado && (
+              <FlatListHistoricoResultadosScreen periodo={resultado} />
+            )}
           </View>
         </View>
       </View>
@@ -146,4 +185,3 @@ const MeusJogosScreen = () => {
 };
 
 export default MeusJogosScreen;
-

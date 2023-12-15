@@ -1,7 +1,7 @@
 import React from "react";
 import { FlatList, View, StyleSheet } from "react-native";
 import CardHistoricoResultadosScreen from "./CardHistoricoResultadosScreen";
-import { MeuObjeto } from "../assets/MeuObjeto";
+import Meu
 
 interface FlatListHistoricoResultadosScreenProps {
   periodo: MeuObjeto[];

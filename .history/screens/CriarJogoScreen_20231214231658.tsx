@@ -50,7 +50,7 @@ const CriarJogoScreen: React.FC = () => {
         let proximoConcurso = null
 
         if (vincularAoProximoConcurso) {
-          proximoConcurso = 2957;
+          proximoConcurso = ;
         }
           // Cria um objeto representando o jogo atual
           const jogoAtual = {

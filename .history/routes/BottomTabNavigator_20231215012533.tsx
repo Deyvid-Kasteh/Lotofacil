@@ -11,7 +11,6 @@ import MaterialTopTabResultados from "./MaterialTopTabResultados";
 import CriarJogoScreen from "../screens/CriarJogoScreen";
 import MeusJogosScreen from "../screens/MeusJogosScreen";
 import ConferirScreen from "../screens/ConferirScreen";
-import Conferir2 from "../screens/ConferirTESTE";
 
 
 // import EncontrarConcurso from "../components/TestComponents";
@@ -94,7 +93,7 @@ const BottomTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Conferir"
-        component={Conferir2}
+        component={ConferirScreen}
         options={{ headerShown: true, headerTitleAlign: "center" }}
       />
     </Tab.Navigator>

@@ -1,41 +1,39 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { View, Text, FlatList, StyleSheet, RefreshControl } from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Cores from "../assets/Cores";
-import CardMeusJogosScreen from "../components/CardMeusJogosScreen";
+import FlatListMeusJogosScreen from "../components/FlatListMeusJogosScreen";
 
 const MeusJogosScreen = () => {
-  const [meusJogos, setMeusJogos] = useState(null);
-  const [refreshing, setRefreshing] = useState(false);
-
-  const fetchData = useCallback(async () => {
-    try {
-      const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
-      const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
-      setMeusJogos(jogosSalvos);
-      console.log(jogosSalvos);
-    } catch (error) {
-      console.error("Erro ao obter dados:", error);
-    }
-  }, []);
-
-  const onRefresh = useCallback(() => {
-    setRefreshing(true);
-    fetchData();
-    setRefreshing(false);
-  }, [fetchData]);
+  const [meusJogos, setMeusJogos] = useState(null)
 
   useEffect(() => {
-    fetchData();
-  }, [fetchData]);
 
-  const renderItem = ({ item }) => (
-    <CardMeusJogosScreen
-      concurso={item.concurso}
-      numerosSelecionados={item.numerosSelecionados}
-      dataEHora={item.dataEHora.split(" ")[0]}
-    />
-  );
+
+
+
+
+    // Código a ser executado ao iniciar o componente
+
+
+    const fetchData = async () => {
+      try {
+        const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
+         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
+        setMeusJogos(jogosSalvos);
+        console.log(jogosSalvos);
+      } catch (error) {
+        console.error("Erro ao obter dados:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+
+
+
+
+
 
   return (
     <View
@@ -58,6 +56,7 @@ const MeusJogosScreen = () => {
           <View
             style={{
               width: 380,
+
               margin: 10,
               padding: 5,
               backgroundColor: Cores.cor4,
@@ -66,7 +65,6 @@ const MeusJogosScreen = () => {
               justifyContent: "space-between",
             }}
           >
-            {/* Cabeçalho da lista */}
             <View
               style={{
                 borderRadius: 5,
@@ -130,14 +128,9 @@ const MeusJogosScreen = () => {
               maxHeight: 500, // Defina a altura máxima desejada
             }}
           >
-            <FlatList
-              data={meusJogos}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.dataEHora?.toString() || ""}
-              refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
-              }
-            />
+            {/* {meusJogos && (
+              <FlatListHistoricoResultadosScreen periodo={resultado} />
+            )} */}
           </View>
         </View>
       </View>
@@ -146,4 +139,3 @@ const MeusJogosScreen = () => {
 };
 
 export default MeusJogosScreen;
-
