@@ -88,6 +88,7 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
             borderRadius: 5,
             backgroundColor: Cores.cor1,
             width: 60,
+            // marginLeft: 2,
             justifyContent: "center",
             alignItems: "center",
             padding: 2,

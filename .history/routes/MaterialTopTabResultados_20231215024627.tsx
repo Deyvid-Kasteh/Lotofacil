@@ -13,23 +13,19 @@ const MaterialTopTabResultados: React.FC = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarLabelStyle: {
-          fontSize: 9,
-        fontWeight: "bold"},
+        tabBarLabelStyle: { fontSize: 11 },
         tabBarStyle: { backgroundColor: Cores.cor4 },
         tabBarActiveTintColor: Cores.cor1,
         // tabBarIndicatorStyle: Cores.cor1,
         tabBarIndicatorStyle: {
-          borderBottomColor: Cores.cor1,
+          borderBottomColor: Cores.cor2,
           borderBottomWidth: 3,
-          borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,
         },
       }}
     >
       <Tab.Screen name="Último concurso" component={ResultadosScreen} />
       <Tab.Screen
-        name="Pesquisar concurso"
+        name="Pesquisar Sorteio"
         component={PesquisarSorteioScreen}
       />
       <Tab.Screen name="Histórico" component={HistoricoResultadosScreen} />

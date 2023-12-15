@@ -20,8 +20,9 @@ const MaterialTopTabResultados: React.FC = () => {
         tabBarActiveTintColor: Cores.cor1,
         // tabBarIndicatorStyle: Cores.cor1,
         tabBarIndicatorStyle: {
-          borderBottomColor: Cores.cor1,
+          borderBottomColor: Cores.cor2,
           borderBottomWidth: 3,
+          
           borderTopLeftRadius: 5,
           borderTopRightRadius: 5,
         },

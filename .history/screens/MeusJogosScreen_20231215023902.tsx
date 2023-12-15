@@ -164,23 +164,16 @@ const MeusJogosScreen = () => {
               }
             />
           </View>
-          <View
-            style={{
-              // width: 400,
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: 50,
-            }}
-          >
+          <View>
             <TouchableOpacity
               style={{
-                width: 200,
+                width: 250,
                 height: 60,
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: Cores.cor1,
                 borderRadius: 20,
+                marginTop: 50,
               }}
               onPress={() => deleteItemFromStorage(keyToDelete)}
             >
@@ -193,20 +186,6 @@ const MeusJogosScreen = () => {
               >
                 Deletar
               </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                width: 80,
-                height: 60,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: Cores.cor1,
-                borderRadius: 20,
-                marginLeft: 50,
-              }}
-              onPress={() => onRefresh()}
-            >
-              <Feather name="refresh-cw" size={24} color="black" />
             </TouchableOpacity>
           </View>
         </View>

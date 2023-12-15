@@ -166,10 +166,8 @@ const MeusJogosScreen = () => {
           </View>
           <View
             style={{
-              // width: 400,
               flexDirection: "row",
               alignItems: "center",
-              justifyContent: "center",
               marginTop: 50,
             }}
           >
@@ -202,9 +200,7 @@ const MeusJogosScreen = () => {
                 alignItems: "center",
                 backgroundColor: Cores.cor1,
                 borderRadius: 20,
-                marginLeft: 50,
               }}
-              onPress={() => onRefresh()}
             >
               <Feather name="refresh-cw" size={24} color="black" />
             </TouchableOpacity>

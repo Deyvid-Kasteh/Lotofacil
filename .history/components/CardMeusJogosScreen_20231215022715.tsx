@@ -87,7 +87,8 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 60,
+            width: 70,
+            marginLeft: 2,
             justifyContent: "center",
             alignItems: "center",
             padding: 2,
@@ -112,6 +113,7 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
             justifyContent: "center",
             borderRadius: 50,
             backgroundColor: Cores.cor1,
+            marginLeft: 16,
           }}
         >
           <MaterialCommunityIcons

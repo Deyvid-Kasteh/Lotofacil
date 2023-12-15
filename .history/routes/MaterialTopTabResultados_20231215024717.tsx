@@ -15,15 +15,13 @@ const MaterialTopTabResultados: React.FC = () => {
       screenOptions={{
         tabBarLabelStyle: {
           fontSize: 9,
-        fontWeight: "bold"},
+        },
         tabBarStyle: { backgroundColor: Cores.cor4 },
         tabBarActiveTintColor: Cores.cor1,
         // tabBarIndicatorStyle: Cores.cor1,
         tabBarIndicatorStyle: {
-          borderBottomColor: Cores.cor1,
+          borderBottomColor: Cores.cor2,
           borderBottomWidth: 3,
-          borderTopLeftRadius: 5,
-          borderTopRightRadius: 5,
         },
       }}
     >

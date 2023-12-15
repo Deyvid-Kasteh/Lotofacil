@@ -202,9 +202,8 @@ const MeusJogosScreen = () => {
                 alignItems: "center",
                 backgroundColor: Cores.cor1,
                 borderRadius: 20,
-                marginLeft: 50,
+                ma
               }}
-              onPress={() => onRefresh()}
             >
               <Feather name="refresh-cw" size={24} color="black" />
             </TouchableOpacity>

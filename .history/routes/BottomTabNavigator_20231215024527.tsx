@@ -94,7 +94,7 @@ const BottomTabNavigator: React.FC = () => {
       />
       <Tab.Screen
         name="Conferir"
-        component={ConferirScreen}
+        component={ConferirScreenConferirScreenConferirScreen}
         options={{ headerShown: true, headerTitleAlign: "center" }}
       />
     </Tab.Navigator>

@@ -79,7 +79,7 @@ const CriarJogoScreen: React.FC = () => {
       console.log("Selecione exatamente 15 números para salvar o jogo.");
     }
   };
-
+  
 
   const handleBolhaPress = (numero: number) => {
     if (chosenNumbers.includes(numero)) {
@@ -365,6 +365,29 @@ const CriarJogoScreen: React.FC = () => {
           </Text>
         </TouchableOpacity>
       )}
+      <>
+        <TouchableOpacity
+          style={{
+            width: 250,
+            height: 60,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: Cores.cor1,
+            borderRadius: 20,
+          }}
+          onPress={() => deleteItemFromStorage(keyToDelete)}
+        >
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: "bold",
+              color: Cores.cor5,
+            }}
+          >
+            Deletar
+          </Text>
+        </TouchableOpacity>
+      </>
     </View>
   );
 };

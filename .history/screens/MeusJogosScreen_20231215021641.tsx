@@ -1,14 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import {
-  View,
-  Text,
-  FlatList,
-  RefreshControl,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, FlatList, StyleSheet, RefreshControl } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as Cores from "../assets/Cores";
-import { Feather } from "@expo/vector-icons";
 import CardMeusJogosScreen from "../components/CardMeusJogosScreen";
 
 interface Jogo {
@@ -41,25 +34,13 @@ const MeusJogosScreen = () => {
     fetchData();
   }, [fetchData]);
 
-  const deleteItemFromStorage = async (key: string): Promise<void> => {
-    try {
-      // Deleta o item associado à chave fornecida
-      await AsyncStorage.removeItem(key);
-      console.log(`Item com chave ${key} deletado com sucesso.`);
-      onRefresh()
-    } catch (error) {
-      console.error(`Erro ao deletar o item: ${error}`);
-    }
-  };
-  const keyToDelete = "meusJogos";
-
-  const renderItem = ({ item }: { item: Jogo }) => (
-    <CardMeusJogosScreen
-      concurso={item.concurso}
-      numerosSelecionados={item.numerosSelecionados}
-      dataEHora={item.dataEHora.split(" ")[0]}
-    />
-  );
+const renderItem = ({ item }: { item: Jogo }) => (
+  <CardMeusJogosScreen
+    concurso={item.concurso}
+    numerosSelecionados={item.numerosSelecionados}
+    dataEHora={item.dataEHora.split(" ")[0]}
+  />
+);
 
   return (
     <View
@@ -151,7 +132,6 @@ const MeusJogosScreen = () => {
           </View>
           <View
             style={{
-              height: 500,
               maxHeight: 500, // Defina a altura máxima desejada
             }}
           >
@@ -164,51 +144,6 @@ const MeusJogosScreen = () => {
               }
             />
           </View>
-          <View
-            style={{
-              // width: 400,
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              marginTop: 50,
-            }}
-          >
-            <TouchableOpacity
-              style={{
-                width: 200,
-                height: 60,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: Cores.cor1,
-                borderRadius: 20,
-              }}
-              onPress={() => deleteItemFromStorage(keyToDelete)}
-            >
-              <Text
-                style={{
-                  fontSize: 30,
-                  fontWeight: "bold",
-                  color: Cores.cor5,
-                }}
-              >
-                Deletar
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                width: 80,
-                height: 60,
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: Cores.cor1,
-                borderRadius: 20,
-                marginLeft: 50,
-              }}
-              onPress={() => onRefresh()}
-            >
-              <Feather name="refresh-cw" size={24} color="black" />
-            </TouchableOpacity>
-          </View>
         </View>
       </View>
     </View>
@@ -216,3 +151,4 @@ const MeusJogosScreen = () => {
 };
 
 export default MeusJogosScreen;
+

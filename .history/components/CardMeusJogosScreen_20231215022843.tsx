@@ -90,7 +90,7 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
             width: 60,
             justifyContent: "center",
             alignItems: "center",
-            padding: 2,
+            // padding: 2,
           }}
         >
           <Text

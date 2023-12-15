@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Cores from "../assets/Cores";
 
@@ -87,7 +87,8 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 60,
+            width: 70,
+            marginLeft: 2,
             justifyContent: "center",
             alignItems: "center",
             padding: 2,
@@ -103,24 +104,6 @@ const CardMeusJogosScreen: React.FC<CardMeusJogosScreenProps> = ({
             {dataEHora}
           </Text>
         </View>
-        <TouchableOpacity
-          // onPress={handleDelete}
-          style={{
-            width: 20,
-            height: 20,
-            alignItems: "center",
-            justifyContent: "center",
-            borderRadius: 50,
-            backgroundColor: Cores.cor1,
-          }}
-        >
-          <MaterialCommunityIcons
-            name="delete-forever"
-            size={14}
-            // color="#F26430"
-            color="#D96248"
-          />
-        </TouchableOpacity>
       </View>
     </View>
   );

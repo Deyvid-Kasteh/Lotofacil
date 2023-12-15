@@ -80,6 +80,16 @@ const CriarJogoScreen: React.FC = () => {
     }
   };
 
+  const deleteItemFromStorage = async (key: string): Promise<void> => {
+    try {
+      // Deleta o item associado à chave fornecida
+      await AsyncStorage.removeItem(key);
+      console.log(`Item com chave ${key} deletado com sucesso.`);
+    } catch (error) {
+      console.error(`Erro ao deletar o item: ${error}`);
+    }
+  };
+  const keyToDelete = "meusJogos";
 
   const handleBolhaPress = (numero: number) => {
     if (chosenNumbers.includes(numero)) {
@@ -365,6 +375,29 @@ const CriarJogoScreen: React.FC = () => {
           </Text>
         </TouchableOpacity>
       )}
+      <>
+        <TouchableOpacity
+          style={{
+            width: 250,
+            height: 60,
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: Cores.cor1,
+            borderRadius: 20,
+          }}
+          onPress={() => deleteItemFromStorage(keyToDelete)}
+        >
+          <Text
+            style={{
+              fontSize: 30,
+              fontWeight: "bold",
+              color: Cores.cor5,
+            }}
+          >
+            Deletar
+          </Text>
+        </TouchableOpacity>
+      </>
     </View>
   );
 };
