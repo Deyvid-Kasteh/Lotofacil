@@ -13,13 +13,6 @@ const dezenasParaEscolher: number[] = Array.from(
   (_, i) => i + 1
 );
 
-const testedeStorage = async () => {
-  const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
-  console.log(jogosSalvosJSON);
-};
-
-testedeStorage();
-
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [checkboxState, setCheckboxState] = useState<boolean>(false);
@@ -50,11 +43,7 @@ const CriarJogoScreen: React.FC = () => {
         // Cria um objeto representando o jogo atual
         const jogoAtual = {
           numerosSelecionados: chosenNumbers,
-          dataEHora: new Date().toLocaleString("pt-BR", {
-            timeZone: "America/Sao_Paulo",
-            dateStyle: "short",
-            timeStyle: "medium",
-          }),
+          data: new Date().toLocaleString(),
         };
 
         // Adiciona o jogo atual à lista de jogos
@@ -64,8 +53,6 @@ const CriarJogoScreen: React.FC = () => {
         await AsyncStorage.setItem("meusJogos", JSON.stringify(jogosSalvos));
 
         console.log("Jogo salvo!");
-                console.log(jogosSalvos);
-
         // Limpa os números escolhidos após salvar o jogo
         setChosenNumbers([]);
       } catch (error) {
@@ -75,17 +62,6 @@ const CriarJogoScreen: React.FC = () => {
       console.log("Selecione exatamente 15 números para salvar o jogo.");
     }
   };
-
-  const deleteItemFromStorage = async (key: string): Promise<void> => {
-    try {
-      // Deleta o item associado à chave fornecida
-      await AsyncStorage.removeItem(key);
-      console.log(`Item com chave ${key} deletado com sucesso.`);
-    } catch (error) {
-      console.error(`Erro ao deletar o item: ${error}`);
-    }
-  };
-  const keyToDelete = "meusJogos";
 
   const handleBolhaPress = (numero: number) => {
     if (chosenNumbers.includes(numero)) {
@@ -367,29 +343,6 @@ const CriarJogoScreen: React.FC = () => {
           </Text>
         </TouchableOpacity>
       )}
-      <>
-        <TouchableOpacity
-          style={{
-            width: 250,
-            height: 60,
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: Cores.cor1,
-            borderRadius: 20,
-          }}
-          onPress={() => deleteItemFromStorage(keyToDelete)}
-        >
-          <Text
-            style={{
-              fontSize: 30,
-              fontWeight: "bold",
-              color: Cores.cor5,
-            }}
-          >
-            Deletar
-          </Text>
-        </TouchableOpacity>
-      </>
     </View>
   );
 };

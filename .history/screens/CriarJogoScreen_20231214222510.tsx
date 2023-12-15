@@ -50,7 +50,7 @@ const CriarJogoScreen: React.FC = () => {
         // Cria um objeto representando o jogo atual
         const jogoAtual = {
           numerosSelecionados: chosenNumbers,
-          dataEHora: new Date().toLocaleString("pt-BR", {
+          data: new Date().toLocaleString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             dateStyle: "short",
             timeStyle: "medium",
@@ -64,8 +64,6 @@ const CriarJogoScreen: React.FC = () => {
         await AsyncStorage.setItem("meusJogos", JSON.stringify(jogosSalvos));
 
         console.log("Jogo salvo!");
-                console.log(jogosSalvos);
-
         // Limpa os números escolhidos após salvar o jogo
         setChosenNumbers([]);
       } catch (error) {
@@ -75,17 +73,6 @@ const CriarJogoScreen: React.FC = () => {
       console.log("Selecione exatamente 15 números para salvar o jogo.");
     }
   };
-
-  const deleteItemFromStorage = async (key: string): Promise<void> => {
-    try {
-      // Deleta o item associado à chave fornecida
-      await AsyncStorage.removeItem(key);
-      console.log(`Item com chave ${key} deletado com sucesso.`);
-    } catch (error) {
-      console.error(`Erro ao deletar o item: ${error}`);
-    }
-  };
-  const keyToDelete = "meusJogos";
 
   const handleBolhaPress = (numero: number) => {
     if (chosenNumbers.includes(numero)) {
@@ -374,19 +361,20 @@ const CriarJogoScreen: React.FC = () => {
             height: 60,
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: Cores.cor1,
+            backgroundColor: Cores.cor2,
             borderRadius: 20,
           }}
-          onPress={() => deleteItemFromStorage(keyToDelete)}
+          onPress={onSaveJogoPress}
         >
           <Text
             style={{
               fontSize: 30,
               fontWeight: "bold",
-              color: Cores.cor5,
+              color: Cores.cor3,
+              textDecorationLine: "line-through",
             }}
           >
-            Deletar
+            Deletar todos o
           </Text>
         </TouchableOpacity>
       </>

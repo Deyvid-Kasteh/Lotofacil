@@ -50,7 +50,7 @@ const CriarJogoScreen: React.FC = () => {
         // Cria um objeto representando o jogo atual
         const jogoAtual = {
           numerosSelecionados: chosenNumbers,
-          dataEHora: new Date().toLocaleString("pt-BR", {
+          data: new Date().toLocaleString("pt-BR", {
             timeZone: "America/Sao_Paulo",
             dateStyle: "short",
             timeStyle: "medium",
@@ -64,8 +64,6 @@ const CriarJogoScreen: React.FC = () => {
         await AsyncStorage.setItem("meusJogos", JSON.stringify(jogosSalvos));
 
         console.log("Jogo salvo!");
-                console.log(jogosSalvos);
-
         // Limpa os números escolhidos após salvar o jogo
         setChosenNumbers([]);
       } catch (error) {
