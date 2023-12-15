@@ -60,7 +60,7 @@ const CriarJogoScreen: React.FC = () => {
               dateStyle: "short",
               timeStyle: "medium",
             }),
-            concurso: proximoConcurso,
+            
           };
 
         // Adiciona o jogo atual à lista de jogos

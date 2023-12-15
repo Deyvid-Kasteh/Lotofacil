@@ -22,7 +22,8 @@ testedeStorage();
 
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
-  const [vincularAoProximoConcurso, setVincularAoProximoConcurso] = useState<boolean>(false);
+  const [checkboxState, setCheckboxState] = useState<boolean>(false);
+  const [vinculaProximoConcurso, setVinculaProximoConcurso] = useState<boolean>(false);
 
   const bolhasSelecionadas = chosenNumbers.length;
 
@@ -49,8 +50,8 @@ const CriarJogoScreen: React.FC = () => {
         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
         let proximoConcurso = null
 
-        if (vincularAoProximoConcurso) {
-          proximoConcurso = "2957";
+        if (vinculadoProximoConcurso) {
+          proximoConcurso = "2957"
         }
           // Cria um objeto representando o jogo atual
           const jogoAtual = {
@@ -60,7 +61,6 @@ const CriarJogoScreen: React.FC = () => {
               dateStyle: "short",
               timeStyle: "medium",
             }),
-            concurso: proximoConcurso,
           };
 
         // Adiciona o jogo atual à lista de jogos
@@ -203,17 +203,13 @@ const CriarJogoScreen: React.FC = () => {
               <TouchableOpacity
                 style={{
                   borderRadius: 5,
-                  backgroundColor: vincularAoProximoConcurso
-                    ? Cores.cor5
-                    : Cores.cor1,
+                  backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
                   width: 40,
                   marginLeft: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-                onPress={() =>
-                  setVincularAoProximoConcurso(!vincularAoProximoConcurso)
-                }
+                onPress={() => setCheckboxState(!checkboxState)}
               >
                 <Text
                   style={{
@@ -282,7 +278,7 @@ const CriarJogoScreen: React.FC = () => {
                 paddingRight: 10,
               }}
             >
-              {vincularAoProximoConcurso === true ? (
+              {checkboxState === true ? (
                 <Text
                   style={{
                     color: Cores.cor5,

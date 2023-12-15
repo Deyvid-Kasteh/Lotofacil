@@ -22,6 +22,7 @@ testedeStorage();
 
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
+  const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] = useState<boolean>(false);
 
   const bolhasSelecionadas = chosenNumbers.length;
@@ -60,7 +61,6 @@ const CriarJogoScreen: React.FC = () => {
               dateStyle: "short",
               timeStyle: "medium",
             }),
-            concurso: proximoConcurso,
           };
 
         // Adiciona o jogo atual à lista de jogos

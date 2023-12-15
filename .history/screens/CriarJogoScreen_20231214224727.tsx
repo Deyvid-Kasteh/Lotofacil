@@ -22,6 +22,7 @@ testedeStorage();
 
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
+  const [checkboxState, setCheckboxState] = useState<boolean>(false);
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] = useState<boolean>(false);
 
   const bolhasSelecionadas = chosenNumbers.length;
@@ -60,7 +61,6 @@ const CriarJogoScreen: React.FC = () => {
               dateStyle: "short",
               timeStyle: "medium",
             }),
-            concurso: proximoConcurso,
           };
 
         // Adiciona o jogo atual à lista de jogos
@@ -203,16 +203,14 @@ const CriarJogoScreen: React.FC = () => {
               <TouchableOpacity
                 style={{
                   borderRadius: 5,
-                  backgroundColor: vincularAoProximoConcurso
-                    ? Cores.cor5
-                    : Cores.cor1,
+                  backgroundColor: checkboxState ? Cores.cor5 : Cores.cor1,
                   width: 40,
                   marginLeft: 2,
                   justifyContent: "center",
                   alignItems: "center",
                 }}
                 onPress={() =>
-                  setVincularAoProximoConcurso(!vincularAoProximoConcurso)
+                  vincularAoProximoConcurso(!vincularAoProximoConcurso)
                 }
               >
                 <Text
@@ -282,7 +280,7 @@ const CriarJogoScreen: React.FC = () => {
                 paddingRight: 10,
               }}
             >
-              {vincularAoProximoConcurso === true ? (
+              {checkboxState === true ? (
                 <Text
                   style={{
                     color: Cores.cor5,
