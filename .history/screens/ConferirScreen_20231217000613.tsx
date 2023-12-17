@@ -13,6 +13,10 @@ const ConferirScreen = () => {
         backgroundColor: Cores.cor3,
       }}
     >
+      <Text>Conferir todos por um único concurso</Text>
+      <Text>Conferir todos por respectivos concursos atrelados</Text>
+      <Text>Conferir jogo com concurso X</Text>
+      <Text>Selecionar qual jogos conferir</Text>
       <View
         style={{
           width: 380,
@@ -20,16 +24,15 @@ const ConferirScreen = () => {
           padding: 5,
           backgroundColor: Cores.cor4,
           borderRadius: 8,
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
+          flexDirection: "row",
+          justifyContent: "space-between",
         }}
       >
         <View
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 100,
+            width: 60,
             marginLeft: 5,
             justifyContent: "center",
             alignItems: "center",
@@ -46,30 +49,115 @@ const ConferirScreen = () => {
         </View>
         <View
           style={{
-            width: 380,
-            margin: 10,
-            padding: 5,
-            backgroundColor: Cores.cor4,
-            borderRadius: 8,
-            flexDirection: "row",
-            justifyContent: "space-evenly",
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 60,
+            marginLeft: 5,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 11,
+              color: Cores.cor5,
+            }}
+          >
+            XXXXXXX
+          </Text>
+        </View>
+        <View
+          style={{
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 80,
+            marginLeft: 5,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 11,
+              color: Cores.cor5,
+            }}
+          >
+            por concurso:
+          </Text>
+        </View>
+        <View
+          style={{
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 60,
+            marginLeft: 5,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 11,
+              color: Cores.cor5,
+            }}
+          >
+            XXXXXXXX
+          </Text>
+        </View>
+      </View>
+      <View
+        style={{
+          width: 380,
+          height: 80,
+          margin: 50,
+          padding: 5,
+          backgroundColor: Cores.cor4,
+          borderRadius: 8,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <View
+          style={{
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 60,
+            marginLeft: 5,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 11,
+              color: Cores.cor5,
+            }}
+          >
+            Conferir
+          </Text>
+        </View>
+        <View
+          style={{
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 250,
+            marginLeft: 5,
+            justifyContent: "flex-start",
             alignItems: "center",
           }}
         >
           <View
             style={{
-              borderRadius: 5,
-              backgroundColor: Cores.cor1,
-              // width: 60,
-              marginLeft: 5,
-              justifyContent: "center",
-              alignItems: "center",
+              margin: 4,
+              backgroundColor: Cores.cor5,
+              width: 200,
+              height: 25,
             }}
           >
             <Text
               style={{
                 fontSize: 11,
-                color: Cores.cor5,
+                color: Cores.cor3,
               }}
             >
               Todos os meus jogos
@@ -77,18 +165,16 @@ const ConferirScreen = () => {
           </View>
           <View
             style={{
-              borderRadius: 5,
-              backgroundColor: Cores.cor1,
-              // width: 60,
-              marginLeft: 5,
-              justifyContent: "center",
-              alignItems: "center",
+              margin: 4,
+              backgroundColor: Cores.cor5,
+              width: 200,
+              height: 25,
             }}
           >
             <Text
               style={{
                 fontSize: 11,
-                color: Cores.cor5,
+                color: Cores.cor3,
               }}
             >
               Apenas jogos de concurso:
@@ -112,7 +198,7 @@ const ConferirScreen = () => {
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 100,
+            width: 60,
             marginLeft: 5,
             justifyContent: "center",
             alignItems: "center",
@@ -124,7 +210,7 @@ const ConferirScreen = () => {
               color: Cores.cor5,
             }}
           >
-            por
+            Conferir
           </Text>
         </View>
         <View
@@ -135,7 +221,7 @@ const ConferirScreen = () => {
             backgroundColor: Cores.cor4,
             borderRadius: 8,
             flexDirection: "row",
-            justifyContent: "space-evenly",
+            justifyContent: "",
             alignItems: "center",
           }}
         >
@@ -143,7 +229,7 @@ const ConferirScreen = () => {
             style={{
               borderRadius: 5,
               backgroundColor: Cores.cor1,
-              // width: 60,
+              width: 60,
               marginLeft: 5,
               justifyContent: "center",
               alignItems: "center",
@@ -155,14 +241,14 @@ const ConferirScreen = () => {
                 color: Cores.cor5,
               }}
             >
-              seu concurso respectivo
+              Conferir
             </Text>
           </View>
           <View
             style={{
               borderRadius: 5,
               backgroundColor: Cores.cor1,
-              // width: 60,
+              width: 60,
               marginLeft: 5,
               justifyContent: "center",
               alignItems: "center",
@@ -174,22 +260,11 @@ const ConferirScreen = () => {
                 color: Cores.cor5,
               }}
             >
-              concurso de número:
+              XXXXXXXX
             </Text>
           </View>
         </View>
       </View>
-      <View
-        style={{
-          width: 380,
-          height: 5,
-          margin: 10,
-          backgroundColor: Cores.cor4,
-          borderRadius: 8,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      ></View>
     </View>
   );
 };

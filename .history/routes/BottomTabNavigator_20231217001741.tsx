@@ -20,7 +20,7 @@ type RootTabParamList = {
   Resultados: undefined;
   "Criar Jogo": undefined;
   "Meus Jogos": undefined;
-  "Conferir Jogos": undefined;
+  Conferir: undefined;
 };
 
 type TabBarIconProps = {
@@ -38,7 +38,7 @@ const getIconName = (routeName: string, focused: boolean): string => {
       return focused ? "ios-create" : "ios-create-outline";
     case "Meus Jogos":
       return focused ? "ios-list" : "ios-list-outline";
-    case "Conferir Jogos":
+    case "Conferir":
       return focused ? "ios-checkmark-circle" : "ios-checkmark-circle-outline";
     default:
       return "";

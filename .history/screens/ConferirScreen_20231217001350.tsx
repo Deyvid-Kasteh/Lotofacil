@@ -16,6 +16,18 @@ const ConferirScreen = () => {
       <View
         style={{
           width: 380,
+          height: 10,
+          margin: 10,
+          backgroundColor: Cores.cor4,
+          borderRadius: 8,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+      </View>
+      <View
+        style={{
+          width: 380,
           margin: 10,
           padding: 5,
           backgroundColor: Cores.cor4,
@@ -179,17 +191,6 @@ const ConferirScreen = () => {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          width: 380,
-          height: 5,
-          margin: 10,
-          backgroundColor: Cores.cor4,
-          borderRadius: 8,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      ></View>
     </View>
   );
 };
