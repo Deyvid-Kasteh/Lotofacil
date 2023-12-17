@@ -70,7 +70,7 @@ const ConferirScreen = () => {
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 80,
+            width: 70,
             marginLeft: 5,
             justifyContent: "center",
             alignItems: "center",
@@ -82,7 +82,7 @@ const ConferirScreen = () => {
               color: Cores.cor5,
             }}
           >
-            por concurso:
+            por concurso
           </Text>
         </View>
         <View

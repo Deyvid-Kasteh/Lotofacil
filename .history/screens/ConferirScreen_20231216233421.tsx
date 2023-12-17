@@ -63,26 +63,7 @@ const ConferirScreen = () => {
               color: Cores.cor5,
             }}
           >
-            XXXXXXX
-          </Text>
-        </View>
-        <View
-          style={{
-            borderRadius: 5,
-            backgroundColor: Cores.cor1,
-            width: 80,
-            marginLeft: 5,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text
-            style={{
-              fontSize: 11,
-              color: Cores.cor5,
-            }}
-          >
-            por concurso:
+            XXXXXXXXXXX
           </Text>
         </View>
         <View
@@ -101,7 +82,26 @@ const ConferirScreen = () => {
               color: Cores.cor5,
             }}
           >
-            XXXXXXXX
+            Números
+          </Text>
+        </View>
+        <View
+          style={{
+            borderRadius: 5,
+            backgroundColor: Cores.cor1,
+            width: 60,
+            marginLeft: 5,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 11,
+              color: Cores.cor5,
+            }}
+          >
+            Data
           </Text>
         </View>
       </View>

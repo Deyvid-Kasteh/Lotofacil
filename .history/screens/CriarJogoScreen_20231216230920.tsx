@@ -24,7 +24,7 @@ const CriarJogoScreen: React.FC = () => {
 
   const bolhasSelecionadas = chosenNumbers.length;
 
-  function gerarNumerosAleatorios(): void {
+  function gerarNumerosAleatorios(): number[] {
     const numerosUnicos: number[] = [];
 
     while (numerosUnicos.length < 15) {

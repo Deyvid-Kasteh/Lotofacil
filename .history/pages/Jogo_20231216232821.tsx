@@ -43,7 +43,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
       <TouchableOpacity style={{
         marginTop: 20,
       }} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle" size={48} color={Cores.cor5} />
+        <Ionicons name="arrow-back-circle" size={48} color={Cores.cor1} />
       </TouchableOpacity>
     </View>
   );

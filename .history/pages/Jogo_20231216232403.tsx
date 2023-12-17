@@ -1,9 +1,10 @@
 import React from 'react'
-import { View, TouchableOpacity } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 import * as Cores from "../assets/Cores";
 import Card from '../components/Card';
 import { Ionicons } from "@expo/vector-icons";
 
+import { View, Text, Button } from "react-native";
 
 
 const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
@@ -40,11 +41,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
         premio12={informacaoRecebida["Premio 12 Acertos"]}
         premio11={informacaoRecebida["Premio 11 Acertos"]}
       />
-      <TouchableOpacity style={{
-        marginTop: 20,
-      }} onPress={() => navigation.goBack()}>
-        <Ionicons name="arrow-back-circle" size={48} color={Cores.cor5} />
-      </TouchableOpacity>
+      <Button title="Voltar" onPress={() => navigation.goBack()} />
     </View>
   );
 };

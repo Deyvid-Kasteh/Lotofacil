@@ -24,20 +24,20 @@ const CriarJogoScreen: React.FC = () => {
 
   const bolhasSelecionadas = chosenNumbers.length;
 
-  function gerarNumerosAleatorios(): void {
-    const numerosUnicos: number[] = [];
+  // function gerarNumerosAleatorios(): number[] {
+  //   const numerosUnicos: number[] = [];
 
-    while (numerosUnicos.length < 15) {
-      const numeroAleatorio = Math.floor(Math.random() * 25) + 1;
+  //   while (numerosUnicos.length < 15) {
+  //     const numeroAleatorio = Math.floor(Math.random() * 25) + 1;
 
-      // Verifica se o número gerado já está no array
-      if (!numerosUnicos.includes(numeroAleatorio)) {
-        numerosUnicos.push(numeroAleatorio);
-      }
-    }
+  //     // Verifica se o número gerado já está no array
+  //     if (!numerosUnicos.includes(numeroAleatorio)) {
+  //       numerosUnicos.push(numeroAleatorio);
+  //     }
+  //   }
 
-    setChosenNumbers(numerosUnicos);
-  }
+  //   setChosenNumbers(numerosUnicos);
+  // }
 
   const onSaveJogoPress = async () => {
     if (bolhasSelecionadas === 15) {

@@ -41,7 +41,7 @@ const Jogo = ({ route, navigation }: { route: any; navigation: any }) => {
         premio11={informacaoRecebida["Premio 11 Acertos"]}
       />
       <TouchableOpacity style={{
-        marginTop: 20,
+        marginTop: 20
       }} onPress={() => navigation.goBack()}>
         <Ionicons name="arrow-back-circle" size={48} color={Cores.cor5} />
       </TouchableOpacity>

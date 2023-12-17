@@ -70,7 +70,7 @@ const ConferirScreen = () => {
           style={{
             borderRadius: 5,
             backgroundColor: Cores.cor1,
-            width: 80,
+            width: 76,
             marginLeft: 5,
             justifyContent: "center",
             alignItems: "center",
