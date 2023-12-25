@@ -58,22 +58,21 @@ const ConferirScreen = () => {
           >
             <BouncyCheckbox
               size={12}
-              fillColor={Cores.cor4}
+              fillColor="red"
               unfillColor="#FFFFFF"
               text="Conferir todos os meus jogos"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
               Conferir todos os meus jogos
-            </Text> */}
+            </Text>
           </View>
           <View
             style={{
@@ -92,17 +91,16 @@ const ConferirScreen = () => {
               text="Conferir apenas jogos de concurso:"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
               Conferir apenas jogos de concurso:
-            </Text> */}
+            </Text>
           </View>
         </View>
         <Text
@@ -135,24 +133,23 @@ const ConferirScreen = () => {
               alignItems: "center",
             }}
           >
-            <BouncyCheckbox
-              size={10}
-              fillColor="red"
-              unfillColor="#FFFFFF"
-              text="por seu concurso respectivo"
-              iconStyle={{ borderColor: "red" }}
-              innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
-              onPress={(isChecked: boolean) => {}}
-            />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
+              <BouncyCheckbox
+                size={10}
+                fillColor="red"
+                unfillColor="#FFFFFF"
+                text="Conferir todos os meus jogos"
+                iconStyle={{ borderColor: "red" }}
+                innerIconStyle={{ borderWidth: 2 }}
+                onPress={(isChecked: boolean) => {}}
+              />
               por seu concurso respectivo
-            </Text> */}
+            </Text>
           </View>
           <View
             style={{
@@ -164,29 +161,24 @@ const ConferirScreen = () => {
               alignItems: "center",
             }}
           >
-            <BouncyCheckbox
-              size={10}
-              fillColor="red"
-              unfillColor="#FFFFFF"
-              text="por concurso de número:"
-              iconStyle={{ borderColor: "red" }}
-              innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
-              onPress={(isChecked: boolean) => {}}
-            />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
+              <BouncyCheckbox onPress={(isChecked: boolean) => {}} />
               por concurso de número:
-            </Text> */}
+            </Text>
           </View>
         </View>
       </View>
 
-      {/* <View
+
+
+
+      
+      <View
         style={{
           width: 380,
           margin: 10,
@@ -268,7 +260,7 @@ const ConferirScreen = () => {
             </Text>
           </View>
         </View>
-      </View> */}
+      </View>
       <View
         style={{
           width: 380,

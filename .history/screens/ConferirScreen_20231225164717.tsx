@@ -58,7 +58,7 @@ const ConferirScreen = () => {
           >
             <BouncyCheckbox
               size={12}
-              fillColor={Cores.cor4}
+              fillColor="red"
               unfillColor="#FFFFFF"
               text="Conferir todos os meus jogos"
               iconStyle={{ borderColor: "red" }}

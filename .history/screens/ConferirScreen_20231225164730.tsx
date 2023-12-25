@@ -58,7 +58,7 @@ const ConferirScreen = () => {
           >
             <BouncyCheckbox
               size={12}
-              fillColor={Cores.cor4}
+              fillColor="red"
               unfillColor="#FFFFFF"
               text="Conferir todos os meus jogos"
               iconStyle={{ borderColor: "red" }}
@@ -92,7 +92,7 @@ const ConferirScreen = () => {
               text="Conferir apenas jogos de concurso:"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
+              textStyle={{ fontSize: 8 }}
               onPress={(isChecked: boolean) => {}}
             />
             {/* <Text

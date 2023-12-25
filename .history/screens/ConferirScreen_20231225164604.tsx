@@ -58,12 +58,11 @@ const ConferirScreen = () => {
           >
             <BouncyCheckbox
               size={12}
-              fillColor={Cores.cor4}
+              fillColor="red"
               unfillColor="#FFFFFF"
               text="Conferir todos os meus jogos"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
             {/* <Text
@@ -92,17 +91,16 @@ const ConferirScreen = () => {
               text="Conferir apenas jogos de concurso:"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
               Conferir apenas jogos de concurso:
-            </Text> */}
+            </Text>
           </View>
         </View>
         <Text
@@ -142,17 +140,16 @@ const ConferirScreen = () => {
               text="por seu concurso respectivo"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
               por seu concurso respectivo
-            </Text> */}
+            </Text>
           </View>
           <View
             style={{
@@ -171,17 +168,16 @@ const ConferirScreen = () => {
               text="por concurso de número:"
               iconStyle={{ borderColor: "red" }}
               innerIconStyle={{ borderWidth: 2 }}
-              textStyle={{ fontSize: 12 }}
               onPress={(isChecked: boolean) => {}}
             />
-            {/* <Text
+            <Text
               style={{
                 fontSize: 11,
                 color: Cores.cor5,
               }}
             >
               por concurso de número:
-            </Text> */}
+            </Text>
           </View>
         </View>
       </View>
