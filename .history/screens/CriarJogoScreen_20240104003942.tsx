@@ -326,7 +326,7 @@ const CriarJogoScreen: React.FC = () => {
                 disableBuiltInState
                 TouchableComponent={RNBounceable}
                 onPress={() => {
-                  setVincularAoConcursoX(!vincularAoConcursoX);
+                  // setCheckboxStatePasso2(!vincularAoConcursoX);
                 }}
               />
             </View>

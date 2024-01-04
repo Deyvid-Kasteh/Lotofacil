@@ -244,9 +244,38 @@ const ConferirScreen = () => {
                 // }
               />
             ) : null}
+
+            {/* <BouncyCheckbox
+              size={28}
+              fillColor={Cores.cor4}
+              unfillColor="#FFFFFF"
+              style={{
+                padding: 10,
+                borderRadius: 5,
+                backgroundColor: checkboxStatePasso2 ? Cores.cor1 : Cores.cor2,
+                marginBottom: 10,
+              }}
+              iconStyle={{ borderRadius: 8 }}
+              innerIconStyle={{
+                borderWidth: 2,
+                borderRadius: 8,
+              }}
+              isChecked={!checkboxStatePasso2}
+              text="Por:"
+              textStyle={{
+                fontSize: 12,
+                textDecorationLine: "none",
+              }}
+              disableBuiltInState
+              TouchableComponent={RNBounceable}
+              onPress={() => {
+                setCheckboxStatePasso2(!checkboxStatePasso2);
+              }}
+            /> */}
           </View>
         </View>
       </View>
+
       <View
         style={{
           width: 380,

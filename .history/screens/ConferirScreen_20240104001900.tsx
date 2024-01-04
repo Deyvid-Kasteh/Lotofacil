@@ -247,6 +247,7 @@ const ConferirScreen = () => {
           </View>
         </View>
       </View>
+
       <View
         style={{
           width: 380,

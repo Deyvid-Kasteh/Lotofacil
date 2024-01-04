@@ -25,10 +25,6 @@ const CriarJogoScreen: React.FC = () => {
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] = useState<boolean>(false);
 
 
-  const [vincularAoConcursoX, setVincularAoConcursoX] =
-    useState<boolean>(false);
-
-
   const bolhasSelecionadas = chosenNumbers.length;
 
   function gerarNumerosAleatorios(): void {
@@ -280,9 +276,7 @@ const CriarJogoScreen: React.FC = () => {
                 style={{
                   padding: 10,
                   borderRadius: 5,
-                  backgroundColor: vincularAoProximoConcurso
-                    ? Cores.cor1
-                    : Cores.cor2,
+                  // backgroundColor: checkboxStatePasso2 ? Cores.cor1 : Cores.cor2,
                   marginBottom: 10,
                 }}
                 iconStyle={{ borderRadius: 8 }}
@@ -290,7 +284,7 @@ const CriarJogoScreen: React.FC = () => {
                   borderWidth: 2,
                   borderRadius: 8,
                 }}
-                isChecked={vincularAoProximoConcurso}
+                // isChecked={!checkboxStatePasso2}
                 text="Vincular ao próximo concurso"
                 textStyle={{
                   fontSize: 12,
@@ -299,7 +293,7 @@ const CriarJogoScreen: React.FC = () => {
                 disableBuiltInState
                 TouchableComponent={RNBounceable}
                 onPress={() => {
-                  setVincularAoProximoConcurso(!vincularAoProximoConcurso);
+                  // setCheckboxStatePasso2(!checkboxStatePasso2);
                 }}
               />
               <BouncyCheckbox
@@ -309,7 +303,7 @@ const CriarJogoScreen: React.FC = () => {
                 style={{
                   padding: 10,
                   borderRadius: 5,
-                  backgroundColor: vincularAoConcursoX ? Cores.cor1 : Cores.cor2,
+                  // backgroundColor: checkboxStatePasso2 ? Cores.cor1 : Cores.cor2,
                   marginBottom: 10,
                 }}
                 iconStyle={{ borderRadius: 8 }}
@@ -317,7 +311,7 @@ const CriarJogoScreen: React.FC = () => {
                   borderWidth: 2,
                   borderRadius: 8,
                 }}
-                isChecked={vincularAoConcursoX}
+                // isChecked={!checkboxStatePasso2}
                 text="Vincular ao concurso:"
                 textStyle={{
                   fontSize: 12,
@@ -326,7 +320,7 @@ const CriarJogoScreen: React.FC = () => {
                 disableBuiltInState
                 TouchableComponent={RNBounceable}
                 onPress={() => {
-                  setVincularAoConcursoX(!vincularAoConcursoX);
+                  // setCheckboxStatePasso2(!checkboxStatePasso2);
                 }}
               />
             </View>
