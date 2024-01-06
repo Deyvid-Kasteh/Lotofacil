@@ -22,11 +22,12 @@ testedeStorage();
 
 const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
-  const [vincularAoProximoConcurso, setVincularAoProximoConcurso] =
-    useState<boolean>(false);
+  const [vincularAoProximoConcurso, setVincularAoProximoConcurso] = useState<boolean>(false);
+
 
   const [vincularAoConcursoX, setVincularAoConcursoX] =
     useState<boolean>(false);
+
 
   const bolhasSelecionadas = chosenNumbers.length;
 
@@ -51,21 +52,21 @@ const CriarJogoScreen: React.FC = () => {
         // Recupera os jogos já salvos (se existirem)
         const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
-        let proximoConcurso = null;
+        let proximoConcurso = null
 
         if (vincularAoProximoConcurso) {
           proximoConcurso = 2957;
         }
-        // Cria um objeto representando o jogo atual
-        const jogoAtual = {
-          numerosSelecionados: chosenNumbers,
-          dataEHora: new Date().toLocaleString("pt-BR", {
-            timeZone: "America/Sao_Paulo",
-            dateStyle: "short",
-            timeStyle: "medium",
-          }),
-          concurso: proximoConcurso,
-        };
+          // Cria um objeto representando o jogo atual
+          const jogoAtual = {
+            numerosSelecionados: chosenNumbers,
+            dataEHora: new Date().toLocaleString("pt-BR", {
+              timeZone: "America/Sao_Paulo",
+              dateStyle: "short",
+              timeStyle: "medium",
+            }),
+            concurso: proximoConcurso,
+          };
 
         // Adiciona o jogo atual à lista de jogos
         jogosSalvos.push(jogoAtual);
@@ -84,6 +85,7 @@ const CriarJogoScreen: React.FC = () => {
       console.log("Selecione exatamente 15 números para salvar o jogo.");
     }
   };
+
 
   const handleBolhaPress = (numero: number) => {
     if (chosenNumbers.includes(numero)) {
@@ -169,7 +171,7 @@ const CriarJogoScreen: React.FC = () => {
         style={{
           alignItems: "center",
           justifyContent: "center",
-          // height: 56,
+          height: 56,
           backgroundColor: Cores.cor5,
           marginBottom: 40,
         }}
@@ -259,78 +261,186 @@ const CriarJogoScreen: React.FC = () => {
                 <AntDesign name="closecircle" size={16} color="#D96248" />
               </TouchableOpacity>
             </View>
+
+            {/* <View
+              style={{
+                width: 380,
+                margin: 10,
+                padding: 5,
+                borderRadius: 8,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <BouncyCheckbox
+                size={20}
+                fillColor={Cores.cor4}
+                unfillColor="#FFFFFF"
+                style={{
+                  padding: 10,
+                  borderRadius: 5,
+                  backgroundColor: vincularAoProximoConcurso
+                    ? Cores.cor1
+                    : Cores.cor2,
+                  marginBottom: 10,
+                }}
+                iconStyle={{ borderRadius: 8 }}
+                innerIconStyle={{
+                  borderWidth: 2,
+                  borderRadius: 8,
+                }}
+                isChecked={vincularAoProximoConcurso}
+                text="Vincular ao próximo concurso"
+                textStyle={{
+                  fontSize: 12,
+                  textDecorationLine: "none",
+                }}
+                disableBuiltInState
+                TouchableComponent={RNBounceable}
+                onPress={() => {
+                  setVincularAoProximoConcurso(!vincularAoProximoConcurso);
+                }}
+              />
+              <BouncyCheckbox
+                size={20}
+                fillColor={Cores.cor4}
+                unfillColor="#FFFFFF"
+                style={{
+                  padding: 10,
+                  borderRadius: 5,
+                  backgroundColor: vincularAoConcursoX ? Cores.cor1 : Cores.cor2,
+                  marginBottom: 10,
+                }}
+                iconStyle={{ borderRadius: 8 }}
+                innerIconStyle={{
+                  borderWidth: 2,
+                  borderRadius: 8,
+                }}
+                isChecked={vincularAoConcursoX}
+                text="Vincular ao concurso:"
+                textStyle={{
+                  fontSize: 12,
+                  textDecorationLine: "none",
+                }}
+                disableBuiltInState
+                TouchableComponent={RNBounceable}
+                onPress={() => {
+                  setVincularAoConcursoX(!vincularAoConcursoX);
+                }}
+              />
+            </View> */}
+
+            <View
+              style={{
+                width: 324,
+                height: 26,
+                borderRadius: 20,
+                flexWrap: "nowrap",
+                flexDirection: "row",
+                // marginTop: 10,
+                // marginLeft: 10,
+                marginRight: 10,
+                alignItems: "center",
+                justifyContent: "flex-start",
+                paddingLeft: 10,
+                paddingRight: 10,
+              }}
+            >
+              {vincularAoProximoConcurso === true ? (
+                <Text
+                  style={{
+                    color: Cores.cor5,
+                  }}
+                >
+                  Vinculado
+                </Text>
+              ) : (
+                <Text
+                  style={{
+                    color: Cores.cor1,
+                  }}
+                >
+                  Vincular ao próximo concurso
+                </Text>
+              )}
+            </View>
           </>
         ) : null}
-        {chosenNumbers.length === 15 ? (
-          <View
-            style={{
-              width: 380,
-              margin: 10,
-              padding: 5,
-              borderRadius: 8,
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <BouncyCheckbox
-              size={20}
-              fillColor={Cores.cor4}
-              unfillColor="#FFFFFF"
+        {chosenNumbers.length === 15
+          ?
+
+          {
+              /* <View
               style={{
-                padding: 10,
-                borderRadius: 5,
-                backgroundColor: vincularAoProximoConcurso
-                  ? Cores.cor1
-                  : Cores.cor2,
-                marginBottom: 10,
-              }}
-              iconStyle={{ borderRadius: 8 }}
-              innerIconStyle={{
-                borderWidth: 2,
+                width: 380,
+                margin: 10,
+                padding: 5,
                 borderRadius: 8,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
               }}
-              isChecked={vincularAoProximoConcurso}
-              text="Vincular ao próximo concurso"
-              textStyle={{
-                fontSize: 12,
-                textDecorationLine: "none",
-              }}
-              disableBuiltInState
-              TouchableComponent={RNBounceable}
-              onPress={() => {
-                setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-              }}
-            />
-            <BouncyCheckbox
-              size={20}
-              fillColor={Cores.cor4}
-              unfillColor="#FFFFFF"
-              style={{
-                padding: 10,
-                borderRadius: 5,
-                backgroundColor: vincularAoConcursoX ? Cores.cor1 : Cores.cor2,
-                marginBottom: 10,
-              }}
-              iconStyle={{ borderRadius: 8 }}
-              innerIconStyle={{
-                borderWidth: 2,
-                borderRadius: 8,
-              }}
-              isChecked={vincularAoConcursoX}
-              text="Vincular ao concurso:"
-              textStyle={{
-                fontSize: 12,
-                textDecorationLine: "none",
-              }}
-              disableBuiltInState
-              TouchableComponent={RNBounceable}
-              onPress={() => {
-                setVincularAoConcursoX(!vincularAoConcursoX);
-              }}
-            />
-          </View>
-        ) : null}
+            >
+              <BouncyCheckbox
+                size={20}
+                fillColor={Cores.cor4}
+                unfillColor="#FFFFFF"
+                style={{
+                  padding: 10,
+                  borderRadius: 5,
+                  backgroundColor: vincularAoProximoConcurso
+                    ? Cores.cor1
+                    : Cores.cor2,
+                  marginBottom: 10,
+                }}
+                iconStyle={{ borderRadius: 8 }}
+                innerIconStyle={{
+                  borderWidth: 2,
+                  borderRadius: 8,
+                }}
+                isChecked={vincularAoProximoConcurso}
+                text="Vincular ao próximo concurso"
+                textStyle={{
+                  fontSize: 12,
+                  textDecorationLine: "none",
+                }}
+                disableBuiltInState
+                TouchableComponent={RNBounceable}
+                onPress={() => {
+                  setVincularAoProximoConcurso(!vincularAoProximoConcurso);
+                }}
+              />
+              <BouncyCheckbox
+                size={20}
+                fillColor={Cores.cor4}
+                unfillColor="#FFFFFF"
+                style={{
+                  padding: 10,
+                  borderRadius: 5,
+                  backgroundColor: vincularAoConcursoX ? Cores.cor1 : Cores.cor2,
+                  marginBottom: 10,
+                }}
+                iconStyle={{ borderRadius: 8 }}
+                innerIconStyle={{
+                  borderWidth: 2,
+                  borderRadius: 8,
+                }}
+                isChecked={vincularAoConcursoX}
+                text="Vincular ao concurso:"
+                textStyle={{
+                  fontSize: 12,
+                  textDecorationLine: "none",
+                }}
+                disableBuiltInState
+                TouchableComponent={RNBounceable}
+                onPress={() => {
+                  setVincularAoConcursoX(!vincularAoConcursoX);
+                }}
+              />
+            </View> */
+            }
+          : null}
       </View>
       <TouchableOpacity
         style={{

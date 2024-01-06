@@ -259,6 +259,9 @@ const CriarJogoScreen: React.FC = () => {
                 <AntDesign name="closecircle" size={16} color="#D96248" />
               </TouchableOpacity>
             </View>
+
+            
+
           </>
         ) : null}
         {chosenNumbers.length === 15 ? (
