@@ -165,36 +165,9 @@ const CriarJogoScreen: React.FC = () => {
         </View>
       </View>
 
-      <TouchableOpacity
-        style={{
-          width: 340,
-          height: 40,
-          backgroundColor: Cores.cor1,
-          borderRadius: 20,
-          flexWrap: "nowrap",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingLeft: 10,
-          paddingRight: 10,
-          marginBottom: 20,
-        }}
-        onPress={() => gerarNumerosAleatorios()}
-      >
-        <FontAwesome name="random" size={24} color={Cores.cor5} />
-        <Text
-          style={{
-            fontSize: 16,
-            color: Cores.cor5,
-          }}
-        >
-          Números aleatórios
-        </Text>
-      </TouchableOpacity>
-
       <View
         style={{
-          height: 130,
+          height: 100,
           alignItems: "center",
           justifyContent: "center",
           // height: 56,
@@ -368,7 +341,32 @@ const CriarJogoScreen: React.FC = () => {
           </View>
         ) : null}
       </View>
-
+      <TouchableOpacity
+        style={{
+          width: 340,
+          height: 40,
+          backgroundColor: Cores.cor1,
+          borderRadius: 20,
+          flexWrap: "nowrap",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          paddingLeft: 10,
+          paddingRight: 10,
+          marginBottom: 20,
+        }}
+        onPress={() => gerarNumerosAleatorios()}
+      >
+        <FontAwesome name="random" size={24} color={Cores.cor5} />
+        <Text
+          style={{
+            fontSize: 16,
+            color: Cores.cor5,
+          }}
+        >
+          Números aleatórios
+        </Text>
+      </TouchableOpacity>
       {bolhasSelecionadas === 15 ? (
         <TouchableOpacity
           style={{

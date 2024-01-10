@@ -165,36 +165,8 @@ const CriarJogoScreen: React.FC = () => {
         </View>
       </View>
 
-      <TouchableOpacity
-        style={{
-          width: 340,
-          height: 40,
-          backgroundColor: Cores.cor1,
-          borderRadius: 20,
-          flexWrap: "nowrap",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-          paddingLeft: 10,
-          paddingRight: 10,
-          marginBottom: 20,
-        }}
-        onPress={() => gerarNumerosAleatorios()}
-      >
-        <FontAwesome name="random" size={24} color={Cores.cor5} />
-        <Text
-          style={{
-            fontSize: 16,
-            color: Cores.cor5,
-          }}
-        >
-          Números aleatórios
-        </Text>
-      </TouchableOpacity>
-
       <View
         style={{
-          height: 130,
           alignItems: "center",
           justifyContent: "center",
           // height: 56,
@@ -295,20 +267,20 @@ const CriarJogoScreen: React.FC = () => {
               padding: 5,
               borderRadius: 8,
               flexDirection: "column",
-              justifyContent: "center",
+              justifyContent: "",
               alignItems: "center",
             }}
           >
             <BouncyCheckbox
               size={20}
-              fillColor={Cores.cor5}
+              fillColor={Cores.cor4}
               unfillColor="#FFFFFF"
               style={{
                 padding: 4,
                 borderRadius: 5,
                 backgroundColor: vincularAoProximoConcurso
-                  ? Cores.cor4
-                  : Cores.cor1,
+                  ? Cores.cor1
+                  : Cores.cor2,
                 marginBottom: 10,
               }}
               iconStyle={{ borderRadius: 8 }}
@@ -317,15 +289,10 @@ const CriarJogoScreen: React.FC = () => {
                 borderRadius: 8,
               }}
               isChecked={vincularAoProximoConcurso}
-              text={
-                vincularAoProximoConcurso
-                  ? "Vinculado ao próximo concurso"
-                  : "Vincular ao próximo concurso"
-              }
+              text="Vincular ao próximo concurso"
               textStyle={{
                 fontSize: 12,
                 textDecorationLine: "none",
-                color: vincularAoProximoConcurso ? Cores.cor1 : Cores.cor5,
               }}
               disableBuiltInState
               TouchableComponent={RNBounceable}
@@ -335,12 +302,12 @@ const CriarJogoScreen: React.FC = () => {
             />
             <BouncyCheckbox
               size={20}
-              fillColor={Cores.cor5}
+              fillColor={Cores.cor4}
               unfillColor="#FFFFFF"
               style={{
                 padding: 4,
                 borderRadius: 5,
-                backgroundColor: vincularAoConcursoX ? Cores.cor4 : Cores.cor1,
+                backgroundColor: vincularAoConcursoX ? Cores.cor1 : Cores.cor2,
                 marginBottom: 10,
               }}
               iconStyle={{ borderRadius: 8 }}
@@ -349,15 +316,10 @@ const CriarJogoScreen: React.FC = () => {
                 borderRadius: 8,
               }}
               isChecked={vincularAoConcursoX}
-              text={
-                vincularAoConcursoX
-                  ? "Vincular ao concurso:"
-                  : "Vinculado ao concurso:"
-              }
+              text="Vincular ao concurso:"
               textStyle={{
                 fontSize: 12,
                 textDecorationLine: "none",
-                color: vincularAoConcursoX ? Cores.cor1 : Cores.cor5,
               }}
               disableBuiltInState
               TouchableComponent={RNBounceable}
@@ -368,11 +330,36 @@ const CriarJogoScreen: React.FC = () => {
           </View>
         ) : null}
       </View>
-
+      <TouchableOpacity
+        style={{
+          width: 220,
+          height: 40,
+          backgroundColor: Cores.cor1,
+          borderRadius: 20,
+          flexWrap: "nowrap",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          paddingLeft: 10,
+          paddingRight: 10,
+          marginBottom: 20,
+        }}
+        onPress={() => gerarNumerosAleatorios()}
+      >
+        <FontAwesome name="random" size={24} color={Cores.cor5} />
+        <Text
+          style={{
+            fontSize: 16,
+            color: Cores.cor5,
+          }}
+        >
+          Números aleatórios
+        </Text>
+      </TouchableOpacity>
       {bolhasSelecionadas === 15 ? (
         <TouchableOpacity
           style={{
-            width: 340,
+            width: 250,
             height: 60,
             justifyContent: "center",
             alignItems: "center",
@@ -395,7 +382,7 @@ const CriarJogoScreen: React.FC = () => {
       ) : (
         <TouchableOpacity
           style={{
-            width: 340,
+            width: 250,
             height: 60,
             justifyContent: "center",
             alignItems: "center",
