@@ -342,7 +342,7 @@ const CriarJogoScreen: React.FC = () => {
 
             <View
               style={{
-                flexDirection: vincularAoConcursoX ? "row" : "column",
+                flexDirection: checkboxStatePasso2 ? "column" : "row",
                 justifyContent: "space-between",
               }}
             >
@@ -356,7 +356,7 @@ const CriarJogoScreen: React.FC = () => {
                   backgroundColor: vincularAoConcursoX
                     ? Cores.cor4
                     : Cores.cor1,
-                  marginRight: 10
+                  marginBottom: 10,
                 }}
                 iconStyle={{ borderRadius: 8 }}
                 innerIconStyle={{
@@ -398,9 +398,9 @@ const CriarJogoScreen: React.FC = () => {
                   //     ? numeroConcursoPasso2.toString()
                   //     : ""
                   // }
-                  // onChangeText={(text) =>
-                  //   setNumeroConcursoPasso2(text ? parseInt(text, 10) : null)
-                  // }
+                  onChangeText={(text) =>
+                    setNumeroConcursoPasso2(text ? parseInt(text, 10) : null)
+                  }
                 />
               ) : null}
             </View>

@@ -356,7 +356,7 @@ const CriarJogoScreen: React.FC = () => {
                   backgroundColor: vincularAoConcursoX
                     ? Cores.cor4
                     : Cores.cor1,
-                  marginRight: 10
+                  // marginBottom: 10,
                 }}
                 iconStyle={{ borderRadius: 8 }}
                 innerIconStyle={{

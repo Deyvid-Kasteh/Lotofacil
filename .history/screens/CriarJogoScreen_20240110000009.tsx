@@ -339,72 +339,61 @@ const CriarJogoScreen: React.FC = () => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
               }}
             />
-
-            <View
+            <BouncyCheckbox
+              size={20}
+              fillColor={Cores.cor5}
+              unfillColor="#FFFFFF"
               style={{
-                flexDirection: vincularAoConcursoX ? "row" : "column",
-                justifyContent: "space-between",
+                padding: 4,
+                borderRadius: 5,
+                backgroundColor: vincularAoConcursoX ? Cores.cor4 : Cores.cor1,
+                marginBottom: 10,
               }}
-            >
-              <BouncyCheckbox
-                size={20}
-                fillColor={Cores.cor5}
-                unfillColor="#FFFFFF"
-                style={{
-                  padding: 4,
-                  borderRadius: 5,
-                  backgroundColor: vincularAoConcursoX
-                    ? Cores.cor4
-                    : Cores.cor1,
-                  marginRight: 10
-                }}
-                iconStyle={{ borderRadius: 8 }}
-                innerIconStyle={{
-                  borderWidth: 2,
-                  borderRadius: 8,
-                }}
-                isChecked={vincularAoConcursoX}
-                text={
-                  vincularAoConcursoX
-                    ? "Vincular ao concurso:"
-                    : "Vinculado ao concurso:"
-                }
-                textStyle={{
-                  fontSize: 12,
-                  textDecorationLine: "none",
-                  color: vincularAoConcursoX ? Cores.cor1 : Cores.cor5,
-                }}
-                disableBuiltInState
-                TouchableComponent={RNBounceable}
-                onPress={() => {
-                  setVincularAoConcursoX(!vincularAoConcursoX);
-                }}
-              />
-
-              {vincularAoConcursoX ? (
-                <TextInput
-                  style={{
-                    paddingHorizontal: 10,
-                    borderRadius: 5,
-                    backgroundColor: Cores.cor1,
-                    height: 28,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                  placeholder="Ex.: 2890"
-                  keyboardType="numeric"
-                  // value={
-                  //   numeroConcursoPasso2 !== null
-                  //     ? numeroConcursoPasso2.toString()
-                  //     : ""
-                  // }
-                  // onChangeText={(text) =>
-                  //   setNumeroConcursoPasso2(text ? parseInt(text, 10) : null)
-                  // }
-                />
-              ) : null}
-            </View>
+              iconStyle={{ borderRadius: 8 }}
+              innerIconStyle={{
+                borderWidth: 2,
+                borderRadius: 8,
+              }}
+              isChecked={vincularAoConcursoX}
+              text={
+                vincularAoConcursoX
+                  ? "Vincular ao concurso:"
+                  : "Vinculado ao concurso:"
+              }
+              textStyle={{
+                fontSize: 12,
+                textDecorationLine: "none",
+                color: vincularAoConcursoX ? Cores.cor1 : Cores.cor5,
+              }}
+              disableBuiltInState
+              TouchableComponent={RNBounceable}
+              onPress={() => {
+                setVincularAoConcursoX(!vincularAoConcursoX);
+              }}
+            />
           </View>
+          {!checkboxStatePasso2 ? (
+              <TextInput
+                style={{
+                  paddingHorizontal: 10,
+                  borderRadius: 5,
+                  backgroundColor: Cores.cor1,
+                  height: 48,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+                placeholder="Ex.: 2890"
+                keyboardType="numeric"
+                value={
+                  numeroConcursoPasso2 !== null
+                    ? numeroConcursoPasso2.toString()
+                    : ""
+                }
+                onChangeText={(text) =>
+                  setNumeroConcursoPasso2(text ? parseInt(text, 10) : null)
+                }
+              />
+            ) : null}
         ) : null}
       </View>
 
