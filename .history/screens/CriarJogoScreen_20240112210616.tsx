@@ -24,11 +24,24 @@ const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] =
     useState<boolean>(false);
-  let proximoConcurso = 2957;
 
   const [vincularAoConcursoX, setVincularAoConcursoX] =
     useState<boolean>(false);
   const [numeroConcursoX, setNumeroConcursoX] = useState<number | null>(null);
+
+  const numeroVinculado = 0000
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -59,6 +72,7 @@ const CriarJogoScreen: React.FC = () => {
         // Recupera os jogos já salvos (se existirem)
         const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
+        let proximoConcurso = null;
 
         if (vincularAoProximoConcurso) {
           proximoConcurso = 2957;
@@ -338,7 +352,6 @@ const CriarJogoScreen: React.FC = () => {
               TouchableComponent={RNBounceable}
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-                setVincularAoConcursoX(false)
               }}
             />
 
@@ -380,8 +393,6 @@ const CriarJogoScreen: React.FC = () => {
                 TouchableComponent={RNBounceable}
                 onPress={() => {
                   setVincularAoConcursoX(!vincularAoConcursoX);
-                  setVincularAoProximoConcurso(false)
-
                 }}
               />
 

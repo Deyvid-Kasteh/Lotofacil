@@ -71,7 +71,7 @@ const CriarJogoScreen: React.FC = () => {
             dateStyle: "short",
             timeStyle: "medium",
           }),
-          concurso: proximoConcurso,
+          concurso: numeroVinculado,
         };
 
         // Adiciona o jogo atual à lista de jogos
@@ -338,7 +338,7 @@ const CriarJogoScreen: React.FC = () => {
               TouchableComponent={RNBounceable}
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-                setVincularAoConcursoX(false)
+                setVincularAoConcursoX()
               }}
             />
 
@@ -380,8 +380,6 @@ const CriarJogoScreen: React.FC = () => {
                 TouchableComponent={RNBounceable}
                 onPress={() => {
                   setVincularAoConcursoX(!vincularAoConcursoX);
-                  setVincularAoProximoConcurso(false)
-
                 }}
               />
 

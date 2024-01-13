@@ -24,11 +24,15 @@ const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] =
     useState<boolean>(false);
-  let proximoConcurso = 2957;
 
   const [vincularAoConcursoX, setVincularAoConcursoX] =
     useState<boolean>(false);
-  const [numeroConcursoX, setNumeroConcursoX] = useState<number | null>(null);
+
+
+
+
+
+
 
 
 
@@ -59,6 +63,7 @@ const CriarJogoScreen: React.FC = () => {
         // Recupera os jogos já salvos (se existirem)
         const jogosSalvosJSON = await AsyncStorage.getItem("meusJogos");
         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
+        let proximoConcurso = null;
 
         if (vincularAoProximoConcurso) {
           proximoConcurso = 2957;
@@ -237,9 +242,9 @@ const CriarJogoScreen: React.FC = () => {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
-                // onPress={() =>
-                //   setVincularAoProximoConcurso(!vincularAoProximoConcurso)
-                // }
+                onPress={() =>
+                  setVincularAoProximoConcurso(!vincularAoProximoConcurso)
+                }
               >
                 <Text
                   style={{
@@ -338,7 +343,6 @@ const CriarJogoScreen: React.FC = () => {
               TouchableComponent={RNBounceable}
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-                setVincularAoConcursoX(false)
               }}
             />
 
@@ -358,7 +362,7 @@ const CriarJogoScreen: React.FC = () => {
                   backgroundColor: vincularAoConcursoX
                     ? Cores.cor4
                     : Cores.cor1,
-                  marginRight: 10,
+                  marginRight: 10
                 }}
                 iconStyle={{ borderRadius: 8 }}
                 innerIconStyle={{
@@ -380,8 +384,6 @@ const CriarJogoScreen: React.FC = () => {
                 TouchableComponent={RNBounceable}
                 onPress={() => {
                   setVincularAoConcursoX(!vincularAoConcursoX);
-                  setVincularAoProximoConcurso(false)
-
                 }}
               />
 
@@ -397,12 +399,14 @@ const CriarJogoScreen: React.FC = () => {
                   }}
                   placeholder="Ex.: 2890"
                   keyboardType="numeric"
-                  value={
-                    numeroConcursoX !== null ? numeroConcursoX.toString() : ""
-                  }
-                  onChangeText={(text) =>
-                    setNumeroConcursoX(text ? parseInt(text, 10) : null)
-                  }
+                  // value={
+                  //   numeroConcursoPasso2 !== null
+                  //     ? numeroConcursoPasso2.toString()
+                  //     : ""
+                  // }
+                  // onChangeText={(text) =>
+                  //   setNumeroConcursoPasso2(text ? parseInt(text, 10) : null)
+                  // }
                 />
               ) : null}
             </View>

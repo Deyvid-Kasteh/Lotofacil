@@ -24,18 +24,21 @@ const CriarJogoScreen: React.FC = () => {
   const [chosenNumbers, setChosenNumbers] = useState<number[]>([]);
   const [vincularAoProximoConcurso, setVincularAoProximoConcurso] =
     useState<boolean>(false);
-  let proximoConcurso = 2957;
+
+  let proximoConcurso = null;
 
   const [vincularAoConcursoX, setVincularAoConcursoX] =
     useState<boolean>(false);
   const [numeroConcursoX, setNumeroConcursoX] = useState<number | null>(null);
 
+  const numeroVinculado: number = numeroConcursoX;
 
 
 
 
 
 
+  
   const bolhasSelecionadas = chosenNumbers.length;
 
   function gerarNumerosAleatorios(): void {
@@ -71,7 +74,7 @@ const CriarJogoScreen: React.FC = () => {
             dateStyle: "short",
             timeStyle: "medium",
           }),
-          concurso: proximoConcurso,
+          concurso: numeroVinculado,
         };
 
         // Adiciona o jogo atual à lista de jogos
@@ -338,7 +341,6 @@ const CriarJogoScreen: React.FC = () => {
               TouchableComponent={RNBounceable}
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-                setVincularAoConcursoX(false)
               }}
             />
 
@@ -380,8 +382,6 @@ const CriarJogoScreen: React.FC = () => {
                 TouchableComponent={RNBounceable}
                 onPress={() => {
                   setVincularAoConcursoX(!vincularAoConcursoX);
-                  setVincularAoProximoConcurso(false)
-
                 }}
               />
 
