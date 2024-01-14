@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import * as Cores from "../assets/Cores";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import RNBounceable from "@freakycoder/react-native-bounceable";
@@ -123,8 +115,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    <View
       style={{
         flex: 1,
         // padding: 10,
@@ -133,10 +124,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         backgroundColor: Cores.cor3,
       }}
     >
-      <ScrollView>
-
-
-      </ScrollView>
       <View
         style={{
           width: 350,
@@ -252,7 +239,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                   borderRadius: 5,
                   backgroundColor: vincularAoProximoConcurso
                     ? Cores.cor5
-                    : Cores.cor5,
+                    : Cores.cor1,
                   width: 40,
                   marginLeft: 2,
                   justifyContent: "center",
@@ -360,7 +347,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
                 setVincularAoConcursoX(false);
-                setIdentificadorDeConcurso(proximoConcurso);
               }}
             />
 
@@ -486,7 +472,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
           </Text>
         </TouchableOpacity>
       )}
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 

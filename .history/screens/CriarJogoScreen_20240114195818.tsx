@@ -7,7 +7,6 @@ import {
   TextInput,
   KeyboardAvoidingView,
   Platform,
-  ScrollView,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
@@ -124,7 +123,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      behavior={Platform.OS === "ios" ? "padding" : "padding"}
       style={{
         flex: 1,
         // padding: 10,
@@ -133,10 +132,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         backgroundColor: Cores.cor3,
       }}
     >
-      <ScrollView>
-
-
-      </ScrollView>
       <View
         style={{
           width: 350,

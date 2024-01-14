@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import * as Cores from "../assets/Cores";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import RNBounceable from "@freakycoder/react-native-bounceable";
@@ -38,10 +30,7 @@ const CriarJogoScreen: React.FC = () => {
     useState<boolean>(false);
   const [numeroConcursoX, setNumeroConcursoX] = useState<number | null>(null);
 
-  let numeroVinculado: any = null;
-const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
-  number | null
->(2958);
+
 
 
 
@@ -72,13 +61,8 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         const jogosSalvos = jogosSalvosJSON ? JSON.parse(jogosSalvosJSON) : [];
 
         if (vincularAoProximoConcurso) {
-          numeroVinculado = proximoConcurso;
-        } else if (vincularAoConcursoX) {
-          numeroVinculado = numeroConcursoX;
-        } else {
-          numeroVinculado = null;
+          proximoConcurso = 2957;
         }
-
         // Cria um objeto representando o jogo atual
         const jogoAtual = {
           numerosSelecionados: chosenNumbers,
@@ -87,7 +71,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
             dateStyle: "short",
             timeStyle: "medium",
           }),
-          concurso: numeroVinculado,
+          concurso: proximoConcurso,
         };
 
         // Adiciona o jogo atual à lista de jogos
@@ -123,8 +107,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
   };
 
   return (
-    <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    <View
       style={{
         flex: 1,
         // padding: 10,
@@ -133,10 +116,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         backgroundColor: Cores.cor3,
       }}
     >
-      <ScrollView>
-
-
-      </ScrollView>
       <View
         style={{
           width: 350,
@@ -226,7 +205,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
           alignItems: "center",
           justifyContent: "flex-start",
           // height: 56,
-          backgroundColor: Cores.cor3,
+          backgroundColor: Cores.cor1,
           marginBottom: 40,
         }}
       >
@@ -252,7 +231,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                   borderRadius: 5,
                   backgroundColor: vincularAoProximoConcurso
                     ? Cores.cor5
-                    : Cores.cor5,
+                    : Cores.cor1,
                   width: 40,
                   marginLeft: 2,
                   justifyContent: "center",
@@ -268,7 +247,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                     color: Cores.cor1,
                   }}
                 >
-                  {identificadorDeConcurso}
+                  2957
                 </Text>
               </TouchableOpacity>
               <View
@@ -359,8 +338,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
               TouchableComponent={RNBounceable}
               onPress={() => {
                 setVincularAoProximoConcurso(!vincularAoProximoConcurso);
-                setVincularAoConcursoX(false);
-                setIdentificadorDeConcurso(proximoConcurso);
+                setVincularAoConcursoX(false)
               }}
             />
 
@@ -402,7 +380,8 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                 TouchableComponent={RNBounceable}
                 onPress={() => {
                   setVincularAoConcursoX(!vincularAoConcursoX);
-                  setVincularAoProximoConcurso(false);
+                  setVincularAoProximoConcurso(false)
+
                 }}
               />
 
@@ -421,17 +400,9 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                   value={
                     numeroConcursoX !== null ? numeroConcursoX.toString() : ""
                   }
-                  onChangeText={(text) => {
-                    // Atualiza o estado com o novo valor
-                    setNumeroConcursoX((prevValue) =>
-                      text ? parseInt(text, 10) : null
-                    );
-
-                    // Agora, use o texto atualizado diretamente
-                    setIdentificadorDeConcurso(
-                      text ? parseInt(text, 10) : null
-                    );
-                  }}
+                  onChangeText={(text) =>
+                    setNumeroConcursoX(text ? parseInt(text, 10) : null)
+                  }
                 />
               ) : null}
             </View>
@@ -486,7 +457,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
           </Text>
         </TouchableOpacity>
       )}
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 
