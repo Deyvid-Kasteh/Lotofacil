@@ -134,13 +134,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         backgroundColor: Cores.cor3,
       }}
     >
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1,
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{
             width: 350,
@@ -422,7 +416,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                     }}
                     placeholder="Ex.: 2890"
                     keyboardType="numeric"
-                    maxLength={4}
                     value={
                       numeroConcursoX !== null ? numeroConcursoX.toString() : ""
                     }

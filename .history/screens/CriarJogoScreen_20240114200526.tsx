@@ -125,7 +125,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={140}
       style={{
         flex: 1,
         // padding: 10,
@@ -134,13 +133,7 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
         backgroundColor: Cores.cor3,
       }}
     >
-      <ScrollView
-        contentContainerStyle={{
-          flexGrow: 1,
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
+      <ScrollView >
         <View
           style={{
             width: 350,
@@ -422,7 +415,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                     }}
                     placeholder="Ex.: 2890"
                     keyboardType="numeric"
-                    maxLength={4}
                     value={
                       numeroConcursoX !== null ? numeroConcursoX.toString() : ""
                     }

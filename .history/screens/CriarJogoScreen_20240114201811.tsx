@@ -422,7 +422,6 @@ const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
                     }}
                     placeholder="Ex.: 2890"
                     keyboardType="numeric"
-                    maxLength={4}
                     value={
                       numeroConcursoX !== null ? numeroConcursoX.toString() : ""
                     }
