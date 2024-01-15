@@ -39,9 +39,13 @@ const CriarJogoScreen: React.FC = () => {
   const [numeroConcursoX, setNumeroConcursoX] = useState<number | null>(null);
 
   let numeroVinculado: any = null;
-  const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
-    number | null
-  >(null);
+const [identificadorDeConcurso, setIdentificadorDeConcurso] = useState<
+  number | null
+>(null);
+
+
+
+
 
   const bolhasSelecionadas = chosenNumbers.length;
 
@@ -403,7 +407,10 @@ const CriarJogoScreen: React.FC = () => {
                   onPress={() => {
                     setVincularAoConcursoX(!vincularAoConcursoX);
                     setVincularAoProximoConcurso(false);
-                    setIdentificadorDeConcurso(numeroConcursoX);
+                                      setIdentificadorDeConcurso(
+                                        proximoConcurso
+                                      );
+
                   }}
                 />
 

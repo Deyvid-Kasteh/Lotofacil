@@ -403,7 +403,7 @@ const CriarJogoScreen: React.FC = () => {
                   onPress={() => {
                     setVincularAoConcursoX(!vincularAoConcursoX);
                     setVincularAoProximoConcurso(false);
-                    setIdentificadorDeConcurso(numeroConcursoX);
+                    setIdentificadorDeConcurso(proximoConcurso);
                   }}
                 />
 
