@@ -128,7 +128,6 @@ const ConferirScreen = () => {
                 }}
                 placeholder="Ex.: 2890"
                 keyboardType="numeric"
-                maxLength={4}
                 value={
                   numeroConcursoPasso1 !== null
                     ? numeroConcursoPasso1.toString()
@@ -233,7 +232,6 @@ const ConferirScreen = () => {
                 }}
                 placeholder="Ex.: 2890"
                 keyboardType="numeric"
-                maxLength={4}
                 value={
                   numeroConcursoPasso2 !== null
                     ? numeroConcursoPasso2.toString()
@@ -247,17 +245,6 @@ const ConferirScreen = () => {
           </View>
         </View>
       </View>
-      <View
-        style={{
-          width: 380,
-          height: 5,
-          margin: 10,
-          backgroundColor: Cores.cor4,
-          borderRadius: 8,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      ></View>
       <RNBounceable
         style={{
           flexDirection: "row",
@@ -278,7 +265,7 @@ const ConferirScreen = () => {
             textDecorationLine: "none",
           }}
         >
-          CONFERIR
+          Por concurso de número:
         </Text>
         {/* Adicione o ícone ou qualquer outro conteúdo desejado aqui */}
       </RNBounceable>

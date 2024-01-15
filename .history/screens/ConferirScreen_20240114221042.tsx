@@ -128,7 +128,6 @@ const ConferirScreen = () => {
                 }}
                 placeholder="Ex.: 2890"
                 keyboardType="numeric"
-                maxLength={4}
                 value={
                   numeroConcursoPasso1 !== null
                     ? numeroConcursoPasso1.toString()
@@ -233,7 +232,6 @@ const ConferirScreen = () => {
                 }}
                 placeholder="Ex.: 2890"
                 keyboardType="numeric"
-                maxLength={4}
                 value={
                   numeroConcursoPasso2 !== null
                     ? numeroConcursoPasso2.toString()
